@@ -1,0 +1,74 @@
+doctype html
+html(lang='es')
+    head
+        include ./head.pug
+    body
+        #wrapper
+            include ./nav.pug
+        #page-wrapper
+            .container-fluid
+                .row
+                    .col-lg-12
+                    h1.page-header Administradores / Admins
+            .row
+                .col-md-4.col-sm-12
+                    button#nuevo_elemento.btn.btn-block.btn-success.btn-outline Agregar nuevo / Add new
+                .col-md-4.col-sm-12 
+
+                .col-md-4.col-sm-12 
+            
+            br
+            .row
+                .col-sm-12
+                    .panel.panel-default
+                        .panel-heading
+                            |  Lista de Adeministradores
+                        .panel-body
+                            table#administradores.display.table.table-striped.table-bordered.table-hover(width='100%')
+                                thead
+                                    tr
+                                        th Username
+                                        th Email
+                                        th Password
+                                        th Registro
+                                        th Activo
+                                        th Rol
+                                        th Acciones/Actions
+
+
+        #myDataModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='basicModal', aria-hidden='true',data-backdrop="static", data-keyboard="false")
+            .modal-dialog
+                .modal-content
+                    .modal-header
+                        button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+                        h4#myModalLabel.modal-title Guardar/Editar
+                    .modal-body
+                        #SaveToModal_ES.form-group
+                            label Ingresa el nombre del usuario
+                            input#txt_username.form-control(type="text", mandatory="true")
+                            label Ingresa su email
+                            input#txt_email.form-control(type="text", mandatory="true")
+                            label Ingresa su contraseña
+                            input#txt_password.form-control(type="password", mandatory="true")
+                            label Activo
+                            select#txt_active.form-control
+                                option(value="true") SI
+                                option(value="false") NO
+                            label Rol
+                            select#txt_role.form-control
+                                option(value="super") Superadministrador
+                                option(value="content") Administrador de Contenido
+                                option(value="moderador") Moderador 
+
+
+
+                    .modal-footer
+                        button.btn.btn-default(type='button', data-dismiss='modal') Cancelar/Cancel
+                        button#SaveChanges.btn.btn-primary(type='button') Guardar cambios / Save Changes
+
+
+
+
+    include ./scripts.pug
+    script(src=routes.AssetsURLCP+'/frontend/js/administradores.js?v='+Math.random())
+

@@ -1,0 +1,29 @@
+nav.navbar.navbar-default.navbar-static-top(role='navigation', style='margin-bottom: 0')
+    .navbar-header
+        button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+        a.navbar-brand(href='index.html') MyScentJourney - ControlPanel
+
+    .navbar-default.sidebar(role='navigation')
+        .sidebar-nav.navbar-collapse
+            ul#side-menu.nav     
+                li
+                    a(href='/controlPanel/dashboard')
+                        i.fa.fa-dashboard.fa-fw
+                        |  Dashboard
+
+                           
+                if(role == 'super' )
+                    li
+                        a(href='/controlPanel/administradores')
+                            i.fa.fa-user.fa-fw
+                            |   Administradores
+               
+                li
+                    a(href='/logout')
+                        i.fa.fa-close.fa-fw
+                        |   Salir
+
