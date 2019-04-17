@@ -95,7 +95,7 @@ $(document).ready(function () {
                 data: "_id",
                 render: function (data, type, row) {
                     if (!row.autor) {
-                        return 'MyScentJourney'
+                        return 'YAAFLEX'
                     } else {
                         return row.autor.username
                     }
@@ -238,7 +238,7 @@ $(document).ready(function () {
                         HoldOn.close();
                         var coments = data.data[1].replace('Comments', '').trim()
                         var likes = data.data[0].replace('Likes', '').trim()
-                        $('#insta_data').html('<a href="https://www.instagram.com/myscentjourney/" target="_blank"> <i class="fa fa-instagram">&nbsp;</i><small> ' + coments + ' <i class="fa fa-comment"></i></small><small> ' + likes + ' <i class="fa fa-heart"></i></small></a>')
+                        $('#insta_data').html('<a href="https://www.instagram.com/YAAFLEX/" target="_blank"> <i class="fa fa-instagram">&nbsp;</i><small> ' + coments + ' <i class="fa fa-comment"></i></small><small> ' + likes + ' <i class="fa fa-heart"></i></small></a>')
 
 
                     }).fail(function (err) {

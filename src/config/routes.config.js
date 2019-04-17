@@ -1,7 +1,5 @@
 module.exports = {
     "AssetsURLCP": "/cdn/assets/cp",
-    "AssetsURLF": "/cdn/assets/f",
-    "AssetsURLe": "/cdn/assets/error",
-    "UrlTmp": "/cdn/assets/tmp",
-    "UrlImages": "/cdn/assets/files/images"
+    "AssetsSite": "/cdn/assets/site",
+    "ImagesUpload": "/cdn/assets/files/images"
 }

@@ -517,7 +517,7 @@ $(document).ready(function () {
                 if (Number(data.count) > 0) {
                     catEmoticonsS = data.data;
                     $.each(data.data, function (i, item) {
-                        $('#Emoticones_product').append('<option data-image="/cdn/assets/f/images/myScentJourney.png" value="' + item._id + '" >' + item.temp_EN + '</option>');
+                        $('#Emoticones_product').append('<option data-image="/cdn/assets/f/images/YAAFLEX.png" value="' + item._id + '" >' + item.temp_EN + '</option>');
                     })
                 }
             }
@@ -818,19 +818,19 @@ $(document).ready(function () {
 
     var ventana = {};
     $('#_AddNose').click(function () {
-        openInNewTab('/controlPanel/nariz');
+        openInNewTab('/lx_admin/nariz');
     });
 
     $('#_AddBrand').click(function () {
-        openInNewTab('/controlPanel/marca');
+        openInNewTab('/lx_admin/marca');
     });
 
     $('#_AddAcord').click(function () {
-        openInNewTab('/controlPanel/acordes');
+        openInNewTab('/lx_admin/acordes');
     });
 
     $('._AddING').click(function () {
-        openInNewTab('/controlPanel/ingredientes');
+        openInNewTab('/lx_admin/ingredientes');
     });
 
     function openInNewTab(url) {

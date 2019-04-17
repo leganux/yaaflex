@@ -171,7 +171,7 @@ $(document).ready(function () {
                             if (item.ref_post.origin != 3) {
                                 pic = item.ref_post.thumbnail
                             } else {
-                                pic = '/cdn/assets/f/images/myScentJourney.png'
+                                pic = '/cdn/assets/f/images/YAAFLEX.png'
                             }
 
 
@@ -258,7 +258,7 @@ $(document).ready(function () {
                             if (item.ref_post.origin != 3) {
                                 pic = item.ref_post.thumbnail
                             } else {
-                                pic = '/cdn/assets/f/images/myScentJourney.png'
+                                pic = '/cdn/assets/f/images/YAAFLEX.png'
                             }
 
 
@@ -421,7 +421,7 @@ $(document).ready(function () {
                             if (item.ref_post.origin != 3) {
                                 pic = item.ref_post.thumbnail
                             } else {
-                                pic = '/cdn/assets/f/images/myScentJourney.png'
+                                pic = '/cdn/assets/f/images/YAAFLEX.png'
                             }
 
                             $('#Alertas_LikesPost_').append('<div class="alert alert-dismissible alert-info">' +

@@ -30,9 +30,9 @@ passport.use(new LocalStrategy({
 ));
 
 
-router.post('/', passport.authenticate('local', { failureRedirect: '/controlPanel', failWithError: true }),
+router.post('/', passport.authenticate('local', { failureRedirect: '/lx_admin', failWithError: true }),
     function (req, res) {
-        res.redirect('/controlPanel/dashboard');
+        res.redirect('/lx_admin/dashboard');
     });
 
 

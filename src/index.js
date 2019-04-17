@@ -29,13 +29,9 @@ if (env.activeSSL) {
   ca = fs.readFileSync(ssl_routes.chain, 'utf8');
 }
 
-// Parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: env.body_parser_extended }))
-
 // parse application/json
-if (env.body_parser_json) {
-  app.use(bodyParser.json())
-}
+app.use(bodyParser.json({ limit: '100mb', type: 'application/json' }));
+app.use(bodyParser.urlencoded({ parameterLimit: 100000, limit: '100mb', extended: true }));
 
 // limit upload filisize
 app.use(fileUpload(
@@ -125,7 +121,7 @@ if (env.environment == 'development' || env.environment == 'qa') {
 app.use(express.json());
 
 //Backoffice and Frontend Routes Control
-app.use('/controlPanel', require('./viewEngine/backoffice'));
+app.use('/lx_admin', require('./viewEngine/backoffice'));
 app.use('/', require('./viewEngine/frontend'));
 app.use('/upload', require('./viewEngine/upload'));
 
