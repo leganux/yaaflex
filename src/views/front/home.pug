@@ -27,11 +27,28 @@ html
                         p You'll can find all the documentation about this project on 
                             a(href="http://docs.leganux.com", target="_blank") docs.leganux.com
                             |  soon
+                        button.btn.btn-primary#activeVoice Say Hi! 
        
        
 
         //scriptsJS
         include ./scripts.pug
+        script.
+            $(document).ready(function(){
+                $('#activeVoice').click(function(){
+                const artyom = new Artyom();
+                artyom.say("Hey Welcome to Yaflex. Yet another amazing framework by leganux",{
+                onStart:function(){
+                console.log("The text is being readed");
+                },
+                onEnd:function(){
+                        console.log("Well, that was all. Try with a longer text !");
+                    }
+                });
+                })
+            })
+            
+
     
 
 
