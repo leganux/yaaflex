@@ -1,15 +1,4 @@
-script(src=config.path.AssetsSite+"/fa/js/all.js")
-script(src=config.path.AssetsSite+"/leganux/equalizr.js")
-script(src=config.path.AssetsSite+"/bs-dist/js/bootstrap.js")
-script(src=config.path.AssetsSite+"/context/jquery.contextMenu.js")
-
-script(src=config.path.AssetsSite+"/summernote/summernote-bs4.js")
-script(src=config.path.AssetsSite+"/select2/js/select2.js")
-script(src=config.path.AssetsSite+"/holdon/holdOn.js")
-script(src=config.path.AssetsSite+"/alertifyjs/alertify.js")
-script(src=config.path.AssetsSite+"/datatables/js/jquery.dataTables.js")
-script(src=config.path.AssetsSite+"/datatables/js/dataTables.bootstrap4.js")
-script(src=config.path.AssetsSite+"/datatables-plugins/dataTables.bootstrap.js")
-script(src=config.path.AssetsSite+"/datatables-responsive/dataTables.responsive.js")
-script(src=config.path.AssetsSite+"/artyom/artyom.js")
+if config.assets.js
+    each val in config.assets.js
+        script(src=config.path.AssetsSite+val)
 

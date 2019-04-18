@@ -2,7 +2,7 @@ doctype html
 html
     head
         include ./head.pug
-        title YAAFLEX - yet another amazing framework by leganux
+        
         
     body
         br
@@ -15,15 +15,19 @@ html
                     center
 
                         h1 Welcome to YAAFLEX v1.0.0.1 
+                        img(src=config.path.AssetsSite + config.assets.img.logo.path, alt="")
                         h3 yet another amazing framework by leganux
                         p &copy; 2007 -2019  
                             a(href="https://leganux.com", target="_blank" ) leganux.com
                         hr
 
                         p This framework was made using 
-                        p NodeJS, Express, PUG, Mongoose, Nodemon, jQuery, Bootstrap, and Bootwatch themes
+                        p NodeJS, Express, PUG, Mongoose, Nodemon, jQuery, Bootstrap, and Bootswatch themes
                         p To acces admin panel go to 
                             a(href="/lx_admin") /lx_admin
+                        b    user:password  
+                        br  
+                        |    admin:12345    
                         p You'll can find all the documentation about this project on 
                             a(href="http://docs.leganux.com", target="_blank") docs.leganux.com
                             |  soon
@@ -42,7 +46,7 @@ html
                 console.log("The text is being readed");
                 },
                 onEnd:function(){
-                        console.log("Well, that was all. Try with a longer text !");
+                       artyom.say("This framework was made using NodeJS, Express, PUG, Mongoose, Nodemon, jQuery, Bootstrap, and Bootswatch themes.  To acces admin panel, go to slash lx_admin, using admin as user and 12345 as password.  You'll can find all the documentation about this project on docs.leganux.com soon"); 
                     }
                 });
                 })

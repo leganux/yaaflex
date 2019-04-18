@@ -1,25 +1,49 @@
 meta(charset='utf-8')
 meta(http-equiv='X-UA-Compatible', content='IE=edge')
-
 meta(name='viewport', content='width=device-width, initial-scale=1')
-
 link(rel='icon',  href='/cdn/assets/favicon.ico')
-meta(name='application-name', content='yaaflex')
-link(rel="stylesheet", href=config.path.AssetsSite+"/fa/css/all.css")
-link(rel="stylesheet", href=config.path.AssetsSite+"/alertifyjs/css/alertify.css")
-link(rel="stylesheet", href=config.path.AssetsSite+"/datatables/css/jquery.dataTables.css")
-link(rel="stylesheet", href=config.path.AssetsSite+"/datatables/css/datatables.bootstrap4.css")
-link(rel="stylesheet", href=config.path.AssetsSite+"/datatables-plugins/datatables.bootstrap.css")
-link(rel="stylesheet", href=config.path.AssetsSite+"/datatables-responsive/datatables.responsive.css")
-link(rel="stylesheet", href=config.path.AssetsSite+"/holdon/holdOn.css")
-link(rel="stylesheet", href=config.path.AssetsSite+"/select2/css/select2.css")
-link(rel="stylesheet", href=config.path.AssetsSite+"/summernote/summernote-bs4.css")
-link(rel="stylesheet", href=config.path.AssetsSite+"/context/jquery.contextMenu.css")
-link(rel="stylesheet", href=config.path.AssetsSite+"/leganux/animate.css")
-link(rel="stylesheet", href=config.path.AssetsSite+"/leganux/equalizr.css")
-link(rel="stylesheet", href=config.path.AssetsSite+"/bs-dist/css/bootstrap.css")
-link(rel="stylesheet", href=config.path.AssetsSite+"/bootswatch-dist/"+config.theme+'/bootstrap.css')
+meta(name="twitter:card" ,content="summary_large_image")
 
+if seo
+    if seo.title
+        title #{seo.title}
+        meta(name='application-name', content=seo.title)
+        meta(name="twitter:title" ,content=seo.title)
+        meta(property='og:title', content=seo.title)
+    if seo.description
+        meta(name='description', content=seo.description)
+        meta(property='og:description', content=seo.description)
+        meta(name="twitter:description" ,content=seo.description)
+    if seo.image 
+        meta(name="twitter:image" ,content=seo.image)
+        meta(property='og:image', content=seo.image)
+    if seo.domain
+        meta(name="twitter:domain" ,content=seo.domain)
+    if seo.url 
+        meta(property='og:url', content=seo.url)
+    if seo.tw_posted_by
+        meta(name="twitter:site" ,content=seo.tw_posted_by)
+    if seo.og_type
+        meta(property='og:type', content=seo.og_type)
+
+
+
+
+
+
+
+
+
+
+if config.assets.css
+    each val in config.assets.css
+        link(rel="stylesheet", href=config.path.AssetsSite+val)
+
+
+
+
+
+link(rel="stylesheet", href=config.path.AssetsSite+"/bootswatch-dist/"+config.theme+'/bootstrap.css')
 script(src=config.path.AssetsSite+"/jquery.js")
 
 
