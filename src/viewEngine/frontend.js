@@ -9,7 +9,7 @@ const env = require('./../config/environment.config')
 const cFunctions = require('./../helpers/common.functions')
 const assets = require('./../config/assets_site.config');
 
-//var fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+
 
 
 

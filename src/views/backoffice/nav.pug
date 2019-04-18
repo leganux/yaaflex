@@ -15,15 +15,27 @@ nav.navbar.navbar-default.navbar-static-top(role='navigation', style='margin-bot
                         i.fa.fa-dashboard.fa-fw
                         |  Dashboard
 
-                           
-                if(role == 'super' )
-                    li
-                        a(href='/lx_admin/administradores')
-                            i.fa.fa-user.fa-fw
-                            |   Administradores
-               
+                li
+                    a(href='/lx_admin/roles_admin')
+                        i.fa.fa-user.fa-fw
+                        |   Admin Roles
+
+                li
+                    a(href='/lx_admin/administradores')
+                        i.fa.fa-user.fa-fw
+                        |   Admins
+                
+                li
+                    a(href='/lx_admin/roles_user')
+                        i.fa.fa-user.fa-fw
+                        |   User roles
+                li
+                    a(href='/lx_admin/users')
+                        i.fa.fa-user.fa-fw
+                        |   Usuarios
+
                 li
                     a(href='/logout')
                         i.fa.fa-close.fa-fw
-                        |   Salir
+                        |   Logout
 
