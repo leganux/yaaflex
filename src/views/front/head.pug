@@ -3,6 +3,10 @@ meta(http-equiv='X-UA-Compatible', content='IE=edge')
 meta(name='viewport', content='width=device-width, initial-scale=1')
 link(rel='icon',  href='/cdn/assets/favicon.ico')
 meta(name="twitter:card" ,content="summary_large_image")
+if config
+    if config.langTexts
+    script.
+        const lx_i18n= JSON.parse('!{config.langTexts}'); 
 
 if seo
     if seo.title

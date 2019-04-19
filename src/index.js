@@ -84,6 +84,7 @@ app.use('/auth/twitter', require('./auth/twitter'));
 app.use('/auth/google', require('./auth/google'));
 app.use('/auth/instagram', require('./auth/instagram'));
 app.use('/auth/admin', require('./auth/admin'));
+app.use('/auth/login', require('./auth/login'));
 
 // Db connection
 const { mongoose } = require('./database');

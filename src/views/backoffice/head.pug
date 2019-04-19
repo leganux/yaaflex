@@ -1,20 +1,43 @@
+
 meta(charset='utf-8')
 meta(http-equiv='X-UA-Compatible', content='IE=edge')
 meta(name='viewport', content='width=device-width, initial-scale=1')
 meta(name='description', content='')
 meta(name='author', content='Angel Erick Cruz Olivera - leganux.com')
-title YAAFLEX - Dashboard
+if config
+    if config.langTexts
+    script.
+        const lx_i18n= JSON.parse('!{config.langTexts}'); 
+    if config.filesPath
+    script.
+        const lx_filesPath= '!{config.filesPath}'; 
 
 
-link(href=routes.AssetsURLCP+'/vendor/bootstrap/css/bootstrap.min.css', rel='stylesheet')
-link(href=routes.AssetsURLCP+'/vendor/metisMenu/metisMenu.min.css', rel='stylesheet')
-link(href=routes.AssetsURLCP+'/dist/css/sb-admin-2.css', rel='stylesheet')
 
-link(href=routes.AssetsURLCP+'/vendor/datatables-plugins/dataTables.bootstrap.css', rel='stylesheet')
-link(href=routes.AssetsURLCP+'/vendor/datatables-responsive/dataTables.responsive.css', rel='stylesheet')
-link(href=routes.AssetsURLCP+'/vendor/holdon/holdOn.css', rel='stylesheet')
-link(href=routes.AssetsURLCP+'/vendor/summernote/summernote.css', rel='stylesheet')
-link(href=routes.AssetsURLCP+'/vendor/alertifyjs/css/alertify.css', rel='stylesheet')
-link(href=routes.AssetsURLCP+'/vendor/alertifyjs/css/themes/bootstrap.css', rel='stylesheet')
-link(href=routes.AssetsURLCP+'/vendor/select2/css/select2.css', rel='stylesheet')
-link(href=routes.AssetsURLCP+'/frontend/css/common.css', rel='stylesheet')
+if seo
+    if seo.title
+        title #{seo.title}
+        meta(name='application-name', content=seo.title)
+        meta(name="twitter:title" ,content=seo.title)
+        meta(property='og:title', content=seo.title)
+    if seo.description
+        meta(name='description', content=seo.description)
+        meta(property='og:description', content=seo.description)
+        meta(name="twitter:description" ,content=seo.description)
+    if seo.image 
+        meta(name="twitter:image" ,content=seo.image)
+        meta(property='og:image', content=seo.image)
+    if seo.domain
+        meta(name="twitter:domain" ,content=seo.domain)
+    if seo.url 
+        meta(property='og:url', content=seo.url)
+    if seo.tw_posted_by
+        meta(name="twitter:site" ,content=seo.tw_posted_by)
+    if seo.og_type
+        meta(property='og:type', content=seo.og_type)
+
+
+if config.assets.css
+    each val in config.assets.css
+        link(rel="stylesheet", href=config.path.AssetsCP+val)
+

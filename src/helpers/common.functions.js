@@ -92,10 +92,11 @@ functions_list.makeHastags = function (content) {
 functions_list.getUserLang = function (req) {
     var clientLang = env.default_lang;
     var cookies = req.cookies;
-    if (cookies.SJ_lang_client) {
-        clientLang = cookies.SJ_lang_client;
+    if (cookies.lxLang) {
+        clientLang = cookies.lxLang;
     }
-    return clientLang;
+    let LangGlobal = require('./../config/i18n/' + clientLang.toUpperCase())
+    return LangGlobal;
 }
 
 module.exports = functions_list;

@@ -1,9 +1,7 @@
-let LangGlobal = {};
+
 const express = require('express');
 const router = express.Router();
 const RoutesConfig = require('./../config/routes.config');
-LangGlobal.ES = require('./../config/lang/ES')
-LangGlobal.EN = require('./../config/lang/EN')
 const CheckSession = require('./../auth/checkSession')
 const env = require('./../config/environment.config')
 const cFunctions = require('./../helpers/common.functions')
@@ -20,10 +18,10 @@ router.get('/', CheckSession, async (req, res) => {
             data: {},
             config: {
                 theme: env.site_theme.toLowerCase(),
-                lang: cFunctions.getUserLang(req),
-                langTexts: LangGlobal[cFunctions.getUserLang(req)],
+                langTexts: JSON.stringify(cFunctions.getUserLang(req)),
                 path: RoutesConfig,
-                assets: assets
+                assets: assets,
+                filesPath : RoutesConfig.FilesPath
             },
             seo: {
                 title: 'YAAFLEX - Yet another amazing framework by leganux',
@@ -33,7 +31,8 @@ router.get('/', CheckSession, async (req, res) => {
                 url: req.protocol + '://' + req.get('host') + req.originalUrl,
                 tw_posted_by: '@leganux',
                 og_type: 'article',
-            }
+            },
+            i18n: cFunctions.getUserLang(req)
         });
 });
 
@@ -43,10 +42,10 @@ router.get('/themePreview', CheckSession, async (req, res) => {
             data: {},
             config: {
                 theme: 'Cosmo',
-                lang: cFunctions.getUserLang(req),
-                langTexts: LangGlobal[cFunctions.getUserLang(req)],
+                langTexts: JSON.stringify(cFunctions.getUserLang(req)),
                 path: RoutesConfig,
-                assets: assets
+                assets: assets,
+                filesPath : RoutesConfig.FilesPath
             },
             seo: {
                 title: 'YAAFLEX - Yet another amazing framework by leganux',
@@ -56,7 +55,8 @@ router.get('/themePreview', CheckSession, async (req, res) => {
                 url: req.protocol + '://' + req.get('host') + req.originalUrl,
                 tw_posted_by: '@leganux',
                 og_type: 'article',
-            }
+            },
+            i18n: cFunctions.getUserLang(req)
         });
 });
 

@@ -1,13 +1,12 @@
-let LangGlobal = {};
+
 const express = require('express');
 const router = express.Router();
 const RoutesConfig = require('./../config/routes.config');
-LangGlobal.ES = require('./../config/lang/ES')
-LangGlobal.EN = require('./../config/lang/EN')
+
 const CheckSession = require('./../auth/checkSession')
 const env = require('./../config/environment.config')
 const cFunctions = require('./../helpers/common.functions')
-const assets = require('./../config/assets_site.config');
+const assets = require('./../config/assets_backoffice.config');
 
 
 
@@ -15,11 +14,10 @@ router.get('/', async (req, res) => {
     res.render("backoffice/backoffice", {
         data: {},
         config: {
-            theme: env.site_theme.toLowerCase(),
-            lang: cFunctions.getUserLang(req),
-            langTexts: LangGlobal[cFunctions.getUserLang(req)],
+            langTexts: JSON.stringify(cFunctions.getUserLang(req)),
             path: RoutesConfig,
-            assets: assets
+            assets: assets,
+            filesPath: RoutesConfig.FilesPath
         },
         seo: {
             title: 'YAAFLEX - Yet another amazing framework by leganux',
@@ -30,25 +28,25 @@ router.get('/', async (req, res) => {
             tw_posted_by: '@leganux',
             og_type: 'article',
         },
-        routes: RoutesConfig
+        i18n: cFunctions.getUserLang(req)
+
     });
 });
 
-
 router.get('/dashboard', CheckSession, async (req, res) => {
-    ses = JSON.stringify(req.user.session);
-    role = req.user.session.role;
+
     res.render("backoffice/dashboard", {
-        role, ses, data: {},
+
+        data: {},
         config: {
-            theme: env.site_theme.toLowerCase(),
-            lang: cFunctions.getUserLang(req),
-            langTexts: LangGlobal[cFunctions.getUserLang(req)],
+            langTexts: JSON.stringify(cFunctions.getUserLang(req)),
             path: RoutesConfig,
-            assets: assets
+            assets: assets,
+            filesPath: RoutesConfig.FilesPath
+
         },
         seo: {
-            title: 'YAAFLEX - Yet another amazing framework by leganux',
+            title: 'YAAFLEX :: Dashboard',
             description: 'YAAFLEX - yet another amazing framework by leganux',
             image: 'http://cdn.leganux.com/IMG/integrado.png',
             domain: req.get('host'),
@@ -56,22 +54,18 @@ router.get('/dashboard', CheckSession, async (req, res) => {
             tw_posted_by: '@leganux',
             og_type: 'article',
         },
-        routes: RoutesConfig
+        i18n: cFunctions.getUserLang(req)
     });
 });
 
 router.get('/administradores', CheckSession, async (req, res) => {
-    ses = JSON.stringify(req.user.session);
-    role = req.user.session.role;
     res.render("backoffice/administradores", {
-        role, ses,
         data: {},
         config: {
-            theme: env.site_theme.toLowerCase(),
-            lang: cFunctions.getUserLang(req),
-            langTexts: LangGlobal[cFunctions.getUserLang(req)],
+            langTexts: JSON.stringify(cFunctions.getUserLang(req)),
             path: RoutesConfig,
-            assets: assets
+            assets: assets,
+            filesPath: RoutesConfig.FilesPath
         },
         seo: {
             title: 'YAAFLEX - Yet another amazing framework by leganux',
@@ -82,7 +76,31 @@ router.get('/administradores', CheckSession, async (req, res) => {
             tw_posted_by: '@leganux',
             og_type: 'article',
         },
-        routes: RoutesConfig
+        i18n: cFunctions.getUserLang(req)
+
+    });
+});
+
+router.get('/roles_admin', CheckSession, async (req, res) => {
+    res.render("backoffice/roles_admin", {
+        data: {},
+        config: {
+            langTexts: JSON.stringify(cFunctions.getUserLang(req)),
+            path: RoutesConfig,
+            assets: assets,
+            filesPath: RoutesConfig.FilesPath
+        },
+        seo: {
+            title: 'YAAFLEX - Yet another amazing framework by leganux',
+            description: 'YAAFLEX - yet another amazing framework by leganux',
+            image: 'http://cdn.leganux.com/IMG/integrado.png',
+            domain: req.get('host'),
+            url: req.protocol + '://' + req.get('host') + req.originalUrl,
+            tw_posted_by: '@leganux',
+            og_type: 'article',
+        },
+        i18n: cFunctions.getUserLang(req)
+
     });
 });
 

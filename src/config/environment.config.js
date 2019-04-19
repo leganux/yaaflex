@@ -10,8 +10,6 @@ module.exports = {
     no_ssl_port: 80,
     site_theme: 'Darkly',
     default_lang: 'EN',
-
-
 }
 
 /**

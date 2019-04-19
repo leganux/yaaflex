@@ -1,0 +1,52 @@
+module.exports = {
+    css: [
+        '/vendor/bootstrap/css/bootstrap.min.css', 
+        '/vendor/metisMenu/metisMenu.min.css',
+        '/dist/css/sb-admin-2.css',
+        '/vendor/datatables-plugins/dataTables.bootstrap.css',
+        '/vendor/datatables-responsive/dataTables.responsive.css',
+        '/vendor/holdon/holdOn.css',
+        '/vendor/summernote/summernote.css',
+        '/vendor/alertifyjs/css/alertify.css',
+        '/vendor/alertifyjs/css/themes/bootstrap.css',
+        '/vendor/select2/css/select2.css',
+        '/code/css/common.css',
+        '/vendor/context/jquery.contextMenu.css',
+        '/vendor/datepicker/css/bootstrap-datepicker.css',
+        '/vendor/fa/css/all.css',
+        '/vendor/leganux/animate.css',
+        '/vendor/leganux/equalizr.css',
+    ],
+    js: [
+        '/vendor/jquery/jquery.min.js',
+        '/vendor/leganux/global.js',
+        '/code/js/common.js',
+        '/vendor/bootstrap/js/bootstrap.min.js',
+        '/vendor/metisMenu/metisMenu.min.js',
+        '/dist/js/sb-admin-2.js',
+        '/vendor/datatables/js/jquery.dataTables.min.js',
+        '/vendor/datatables-plugins/dataTables.bootstrap.min.js',
+        '/vendor/datatables-responsive/dataTables.responsive.js',
+        '/vendor/summernote/summernote.js',
+        '/vendor/summernote/lang/summernote-es-ES.js',
+        '/vendor/alertifyjs/alertify.js',
+        '/vendor/select2/js/select2.js',
+        '/vendor/holdon/holdOn.js',
+        '/vendor/artyom/artyom.js',
+        '/vendor/context/jquery.contextMenu.js',
+        '/vendor/datepicker/js/bootstrap-datepicker.js',
+        '/vendor/fa/js/all.js',
+        '/vendor/iform/iForm.js',
+        '/vendor/leganux/client.js',
+        '/vendor/leganux/equalizr.js',
+        '/vendor/moment/momment.js',
+    ],
+    img: {
+        logo: {
+            name: 'yaaflex-character',
+            path: '/vendor/_img/yaaflex.png',
+            prop: 'class="img img-fluid"'
+        },
+    }
+}
+

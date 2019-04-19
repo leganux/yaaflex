@@ -1,13 +1,4 @@
-script(src=routes.AssetsURLCP+'/vendor/jquery/jquery.min.js')
-script(src=routes.AssetsURLCP+'/frontend/js/common.js')
-script(src=routes.AssetsURLCP+'/vendor/bootstrap/js/bootstrap.min.js')
-script(src=routes.AssetsURLCP+'/vendor/metisMenu/metisMenu.min.js')
-script(src=routes.AssetsURLCP+'/dist/js/sb-admin-2.js')
-script(src=routes.AssetsURLCP+'/vendor/datatables/js/jquery.dataTables.min.js')
-script(src=routes.AssetsURLCP+'/vendor/datatables-plugins/dataTables.bootstrap.min.js')
-script(src=routes.AssetsURLCP+'/vendor/datatables-responsive/dataTables.responsive.js')
-script(src=routes.AssetsURLCP+'/vendor/summernote/summernote.js')
-script(src=routes.AssetsURLCP+'/vendor/summernote/lang/summernote-es-ES.js')
-script(src=routes.AssetsURLCP+'/vendor/alertifyjs/alertify.js')
-script(src=routes.AssetsURLCP+'/vendor/select2/js/select2.js')
-script(src=routes.AssetsURLCP+'/vendor/holdon/holdOn.js')
+
+if config.assets.js
+    each val in config.assets.js
+        script(src=config.path.AssetsCP+val)

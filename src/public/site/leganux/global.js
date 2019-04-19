@@ -1,4 +1,163 @@
 
+const lxDatatableLanguaje = function (lang) {
+    var OBJ = {}
+    switch (lang) {
+        case 'ES':
+            OBJ = {
+                "sProcessing": "Procesando...",
+                "sLengthMenu": "Mostrar _MENU_ registros",
+                "sZeroRecords": "No se encontraron resultados",
+                "sEmptyTable": "Ningún dato disponible en esta tabla",
+                "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                "sInfoPostFix": "",
+                "sSearch": "Buscar:",
+                "sUrl": "",
+                "sInfoThousands": ",",
+                "sLoadingRecords": "Cargando...",
+                "oPaginate": {
+                    "sFirst": "Primero",
+                    "sLast": "Último",
+                    "sNext": "Siguiente",
+                    "sPrevious": "Anterior"
+                },
+                "oAria": {
+                    "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                    "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                }
+            }
+            break;
+        case 'DE':
+            OBJ = {
+                "sEmptyTable": "Keine Daten in der Tabelle vorhanden",
+                "sInfo": "_START_ bis _END_ von _TOTAL_ Einträgen",
+                "sInfoEmpty": "Keine Daten vorhanden",
+                "sInfoFiltered": "(gefiltert von _MAX_ Einträgen)",
+                "sInfoPostFix": "",
+                "sInfoThousands": ".",
+                "sLengthMenu": "_MENU_ Einträge anzeigen",
+                "sLoadingRecords": "Wird geladen ..",
+                "sProcessing": "Bitte warten ..",
+                "sSearch": "Suchen",
+                "sZeroRecords": "Keine Einträge vorhanden",
+                "oPaginate": {
+                    "sFirst": "Erste",
+                    "sPrevious": "Zurück",
+                    "sNext": "Nächste",
+                    "sLast": "Letzte"
+                },
+                "oAria": {
+                    "sSortAscending": ": aktivieren, um Spalte aufsteigend zu sortieren",
+                    "sSortDescending": ": aktivieren, um Spalte absteigend zu sortieren"
+                },
+                "select": {
+                    "rows": {
+                        "_": "%d Zeilen ausgewählt",
+                        "0": "",
+                        "1": "1 Zeile ausgewählt"
+                    }
+                },
+                "buttons": {
+                    "print": "Drucken",
+                    "colvis": "Spalten",
+                    "copy": "Kopieren",
+                    "copyTitle": "In Zwischenablage kopieren",
+                    "copyKeys": "Taste <i>ctrl</i> oder <i>\u2318</i> + <i>C</i> um Tabelle<br>in Zwischenspeicher zu kopieren.<br><br>Um abzubrechen die Nachricht anklicken oder Escape drücken.",
+                    "copySuccess": {
+                        "_": "%d Spalten kopiert",
+                        "1": "1 Spalte kopiert"
+                    }
+                }
+            }
+
+            break;
+        case 'IT':
+            OBJ = {
+                "sEmptyTable": "Nessun dato presente nella tabella",
+                "sInfo": "Vista da _START_ a _END_ di _TOTAL_ elementi",
+                "sInfoEmpty": "Vista da 0 a 0 di 0 elementi",
+                "sInfoFiltered": "(filtrati da _MAX_ elementi totali)",
+                "sInfoPostFix": "",
+                "sInfoThousands": ".",
+                "sLengthMenu": "Visualizza _MENU_ elementi",
+                "sLoadingRecords": "Caricamento...",
+                "sProcessing": "Elaborazione...",
+                "sSearch": "Cerca:",
+                "sZeroRecords": "La ricerca non ha portato alcun risultato.",
+                "oPaginate": {
+                    "sFirst": "Inizio",
+                    "sPrevious": "Precedente",
+                    "sNext": "Successivo",
+                    "sLast": "Fine"
+                },
+                "oAria": {
+                    "sSortAscending": ": attiva per ordinare la colonna in ordine crescente",
+                    "sSortDescending": ": attiva per ordinare la colonna in ordine decrescente"
+                }
+            }
+            break;
+        case 'FR':
+            OBJ = {
+                "sProcessing": "Traitement en cours...",
+                "sSearch": "Rechercher&nbsp;:",
+                "sLengthMenu": "Afficher _MENU_ &eacute;l&eacute;ments",
+                "sInfo": "Affichage de l'&eacute;l&eacute;ment _START_ &agrave; _END_ sur _TOTAL_ &eacute;l&eacute;ments",
+                "sInfoEmpty": "Affichage de l'&eacute;l&eacute;ment 0 &agrave; 0 sur 0 &eacute;l&eacute;ment",
+                "sInfoFiltered": "(filtr&eacute; de _MAX_ &eacute;l&eacute;ments au total)",
+                "sInfoPostFix": "",
+                "sLoadingRecords": "Chargement en cours...",
+                "sZeroRecords": "Aucun &eacute;l&eacute;ment &agrave; afficher",
+                "sEmptyTable": "Aucune donn&eacute;e disponible dans le tableau",
+                "oPaginate": {
+                    "sFirst": "Premier",
+                    "sPrevious": "Pr&eacute;c&eacute;dent",
+                    "sNext": "Suivant",
+                    "sLast": "Dernier"
+                },
+                "oAria": {
+                    "sSortAscending": ": activer pour trier la colonne par ordre croissant",
+                    "sSortDescending": ": activer pour trier la colonne par ordre d&eacute;croissant"
+                },
+                "select": {
+                    "rows": {
+                        _: "%d lignes séléctionnées",
+                        0: "Aucune ligne séléctionnée",
+                        1: "1 ligne séléctionnée"
+                    }
+                }
+            }
+            break;
+        default:
+            OBJ = {
+                "sEmptyTable": "No data available in table",
+                "sInfo": "Showing _START_ to _END_ of _TOTAL_ entries",
+                "sInfoEmpty": "Showing 0 to 0 of 0 entries",
+                "sInfoFiltered": "(filtered from _MAX_ total entries)",
+                "sInfoPostFix": "",
+                "sInfoThousands": ",",
+                "sLengthMenu": "Show _MENU_ entries",
+                "sLoadingRecords": "Loading...",
+                "sProcessing": "Processing...",
+                "sSearch": "Search:",
+                "sZeroRecords": "No matching records found",
+                "oPaginate": {
+                    "sFirst": "First",
+                    "sLast": "Last",
+                    "sNext": "Next",
+                    "sPrevious": "Previous"
+                },
+                "oAria": {
+                    "sSortAscending": ": activate to sort column ascending",
+                    "sSortDescending": ": activate to sort column descending"
+                }
+            }
+            break;
+
+    }
+    return OBJ;
+}
+
 
 const lxDownloadFile = function (text, filename, ext) {
     if (!ext) {
@@ -248,8 +407,8 @@ function getUserIP(onNewIP) {
     var myPeerConnection = window.RTCPeerConnection || window.mozRTCPeerConnection || window.webkitRTCPeerConnection;
 
     var pc = new myPeerConnection({
-            iceServers: []
-        }),
+        iceServers: []
+    }),
         noop = function () {
         },
         localIPs = {},
@@ -281,4 +440,39 @@ function getUserIP(onNewIP) {
         if (!ice || !ice.candidate || !ice.candidate.candidate || !ice.candidate.candidate.match(ipRegex)) return;
         ice.candidate.candidate.match(ipRegex).forEach(iterateIP);
     };
+}
+
+function lxGetCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function lxSetCookie(cname, cvalue, exdays) {
+    if (!exdays) {
+        exdays = 15;
+    }
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    var expires = "expires=" + d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+let lxLang = 'EN';
+
+if (lxGetCookie('lxLang')) {
+    lxLang = lxGetCookie('lxLang');
+}
+else {
+    lxLang = 'EN';
+    lxSetCookie('lxLang', 'EN');
 }

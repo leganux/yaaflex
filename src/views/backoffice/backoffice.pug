@@ -7,10 +7,10 @@ html(lang='en')
         meta(name='description', content='')
         meta(name='author', content='')
         title lx_admin
-        link(href=routes.AssetsURLCP+'/vendor/bootstrap/css/bootstrap.min.css', rel='stylesheet')
-        link(href=routes.AssetsURLCP+'/vendor/metisMenu/metisMenu.min.css', rel='stylesheet')
-        link(href=routes.AssetsURLCP+'/dist/css/sb-admin-2.css', rel='stylesheet')
-        link(href=routes.AssetsURLCP+'/vendor/font-awesome/css/font-awesome.min.css', rel='stylesheet', type='text/css')
+        link(href=config.path.AssetsCP+'/vendor/bootstrap/css/bootstrap.min.css', rel='stylesheet')
+        link(href=config.path.AssetsCP+'/vendor/metisMenu/metisMenu.min.css', rel='stylesheet')
+        link(href=config.path.AssetsCP+'/dist/css/sb-admin-2.css', rel='stylesheet')
+        link(href=config.path.AssetsCP+'/vendor/font-awesome/css/font-awesome.min.css', rel='stylesheet', type='text/css')
     body
         .container
             .row
@@ -27,8 +27,8 @@ html(lang='en')
                                         input.form-control(id="getPassword_", placeholder='Password', name='password', type='password', value='')
                                     input.btn.btn-lg.btn-success.btn-block( type="submit" value="login") 
 
-        script(src=routes.AssetsURLCP+'/vendor/jquery/jquery.min.js')
-        script(src=routes.AssetsURLCP+'/vendor/bootstrap/js/bootstrap.min.js')
-        script(src=routes.AssetsURLCP+'/vendor/metisMenu/metisMenu.min.js')
-        script(src=routes.AssetsURLCP+'/dist/js/sb-admin-2.js')
-        script(src=routes.AssetsURLCP+'/frontend/js/login.js')
+        script(src=config.path.AssetsCP+'/vendor/jquery/jquery.min.js')
+        script(src=config.path.AssetsCP+'/vendor/bootstrap/js/bootstrap.min.js')
+        script(src=config.path.AssetsCP+'/vendor/metisMenu/metisMenu.min.js')
+        script(src=config.path.AssetsCP+'/dist/js/sb-admin-2.js')
+        script(src=config.path.AssetsCP+'/code/js/login.js')

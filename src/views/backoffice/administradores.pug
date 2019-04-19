@@ -9,10 +9,10 @@ html(lang='es')
             .container-fluid
                 .row
                     .col-lg-12
-                    h1.page-header Administradores / Admins
+                    h1.page-header #{i18n.admin_title_admins }
             .row
                 .col-md-4.col-sm-12
-                    button#nuevo_elemento.btn.btn-block.btn-success.btn-outline Agregar nuevo / Add new
+                    button#nuevo_elemento.btn.btn-block.btn-success.btn-outline #{i18n.admin_button_new}
                 .col-md-4.col-sm-12 
 
                 .col-md-4.col-sm-12 
@@ -22,18 +22,18 @@ html(lang='es')
                 .col-sm-12
                     .panel.panel-default
                         .panel-heading
-                            |  Lista de Adeministradores
+                            |  #{i18n.admin_admins_list}
                         .panel-body
                             table#administradores.display.table.table-striped.table-bordered.table-hover(width='100%')
                                 thead
                                     tr
-                                        th Username
-                                        th Email
-                                        th Password
-                                        th Registro
-                                        th Activo
-                                        th Rol
-                                        th Acciones/Actions
+                                        th #{i18n.admin_admins_username}
+                                        th #{i18n.admin_admins_email}
+                                        th #{i18n.admin_admins_password}
+                                        th #{i18n.admin_admins_date_reg}
+                                        th #{i18n.admin_admins_active}
+                                        th #{i18n.admin_admins_rol}
+                                        th #{i18n.admin_admins_actions}
 
 
         #myDataModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='basicModal', aria-hidden='true',data-backdrop="static", data-keyboard="false")
@@ -41,34 +41,32 @@ html(lang='es')
                 .modal-content
                     .modal-header
                         button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
-                        h4#myModalLabel.modal-title Guardar/Editar
+                        h4#myModalLabel.modal-title #{i18n.admin_modal_save_edit}
                     .modal-body
                         #SaveToModal_ES.form-group
-                            label Ingresa el nombre del usuario
+                            label  #{i18n.admin_modal_add_username}
                             input#txt_username.form-control(type="text", mandatory="true")
-                            label Ingresa su email
+                            label  #{i18n.admin_modal_add_email}
                             input#txt_email.form-control(type="text", mandatory="true")
-                            label Ingresa su contraseña
+                            label #{i18n.admin_modal_add_password}
                             input#txt_password.form-control(type="password", mandatory="true")
-                            label Activo
+                            label #{i18n.admin_modal_is_active}
                             select#txt_active.form-control
                                 option(value="true") SI
                                 option(value="false") NO
-                            label Rol
+                            label #{i18n.admin_modal_add_rol}
                             select#txt_role.form-control
-                                option(value="super") Superadministrador
-                                option(value="content") Administrador de Contenido
-                                option(value="moderador") Moderador 
+                                
 
 
 
                     .modal-footer
-                        button.btn.btn-default(type='button', data-dismiss='modal') Cancelar/Cancel
-                        button#SaveChanges.btn.btn-primary(type='button') Guardar cambios / Save Changes
+                        button.btn.btn-default(type='button', data-dismiss='modal') #{i18n.admin_modal_cancel}
+                        button#SaveChanges.btn.btn-primary(type='button') #{i18n.admin_modal_save}
 
 
 
 
     include ./scripts.pug
-    script(src=routes.AssetsURLCP+'/frontend/js/administradores.js?v='+Math.random())
+    script(src=config.path.AssetsCP+'/code/js/administradores.js?v='+Math.random())
 
