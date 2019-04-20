@@ -59,6 +59,15 @@ module.exports = {
     admin_adm_role_actions:'Actions',
     admin_adm_role_list:'List of Admin Roles',
 
+    //alertify messages
+
+    txt_an_error_occured:'An error occurred please try again later',
+    txt_fonfirm_delete:'Confirm delete',
+    txt_fonfirm_delete_question:'Are you sure you want to delete this object? this action has not return.',
+    txt_delete_correctly:'Object has been deleted correctly.',
+    txt_save_correctly:'Object has been saved correctly.',
+    txt_full_all_data:'Please fill all the fields to continue.',
+
    
     
 

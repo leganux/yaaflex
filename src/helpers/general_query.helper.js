@@ -1,7 +1,10 @@
 
+const bcrypt = require('bcryptjs');
+var env = require('./../config/environment.config')
+const saltRounds = env.bcrypt_salt_rounds;
+const moment = require('moment');
 
-
-module.exports = function (router, OBJModel, _Population, CheckSession, _Special) {
+module.exports = function (router, OBJModel, _Population, CheckSession, _Special, _addData) {
 
     // GET one  Object find
     router.get('/find/', CheckSession, async (req, res) => {
@@ -157,14 +160,15 @@ module.exports = function (router, OBJModel, _Population, CheckSession, _Special
 
     // GET  one  object by ID
     router.get('/:id', CheckSession, async (req, res) => {
-        let query = await OBJModel.findById(req.params.id);
+        let query =  OBJModel.findById(req.params.id);
         if (_Population && _Population.length > 0) {
             _Population.map(function (item, i, arr) {
                 query.populate(item)
             });
         }
-        query.exec((err, data) => {
+        await query.exec((err, data) => {
             if (err) {
+                console.log(err);
                 res.status(404).json({
                     message: '500 Internal Server Error',
                     error: err,
@@ -192,16 +196,42 @@ module.exports = function (router, OBJModel, _Population, CheckSession, _Special
         const saveData = req.body;
 
         if (_Special && _Special.post && _Special.post.length > 0) {
-            _Special.post.map(function (item, i, arr) {
-                if (saveData.hasOwnProperty(item.path)) {
-                    if (!item.inner) {
-                        saveData[item.path] = item.value;
-                    } else {
-                        saveData[item.path] = item.value(saveData[item.path]);
+
+            for (var i = 0; i < _Special.post.length; i++) {
+
+                if (saveData.hasOwnProperty(_Special.post[i].path)) {
+
+                    if (!_Special.post[i].special) {
+
+                        saveData[_Special.post[i].path] = _Special.post[i].value;
                     }
+                    else {
+
+                        switch (_Special.post[i].type) {
+                            case 'pass':
+
+                                const hash = await bcrypt.hash(saveData[_Special.post[i].path], saltRounds);
+                                saveData[_Special.post[i].path] = hash;
+                                break;
+                            case 'date':
+
+                                saveData[_Special.post[i].path] = moment().format()
+                                break;
+                        }
+
+                    }
+
                 }
-            });
+            }
+
         }
+
+        if (_addData && _addData.post && _addData.post.length > 0) {
+            _addData.post.map(function (item, i, arr) {
+                saveData[item.path] = item.value;
+            })
+        };
+
         const obj = new OBJModel(saveData);
 
 
@@ -233,20 +263,59 @@ module.exports = function (router, OBJModel, _Population, CheckSession, _Special
     router.put('/:id', CheckSession, async (req, res) => {
         const json = req.body;
         const newObject = {};
+
         for (var key in json) {
             if (json.hasOwnProperty(key)) {
-                if (newObject[key]) {
+                if (json[key]) {
                     newObject[key] = json[key];
                 }
-                if (newObject[key] === 'false') {
+                if (json[key] === 'false') {
                     newObject[key] = false;
                 }
-                if (newObject[key] === false) {
+                if (json[key] === false) {
                     newObject[key] = false;
                 }
             }
         }
 
+        if (_Special && _Special.put && _Special.put.length > 0) {
+
+            for (var i = 0; i < _Special.put.length; i++) {
+
+                if (newObject.hasOwnProperty(_Special.put[i].path)) {
+
+                    if (!_Special.put[i].special) {
+
+                        newObject[_Special.put[i].path] = _Special.put[i].value;
+                    }
+                    else {
+
+                        switch (_Special.put[i].type) {
+                            case 'pass':
+
+                                const hash = await bcrypt.hash(newObject[_Special.put[i].path], saltRounds);
+                                newObject[_Special.put[i].path] = hash;
+                                break;
+                            case 'date':
+
+                                newObject[_Special.put[i].path] = moment().format()
+                                break;
+                        }
+
+                    }
+
+                }
+            }
+
+        }
+
+        if (_addData && _addData.put && _addData.put.length > 0) {
+            _addData.put.map(function (item, i, arr) {
+                newObject[item.path] = item.value;
+            })
+        };
+
+       
         await OBJModel.findByIdAndUpdate(req.params.id, { $set: newObject }, (err, data) => {
             if (err) {
                 res.status(500).json({
@@ -274,19 +343,14 @@ module.exports = function (router, OBJModel, _Population, CheckSession, _Special
     router.delete('/:id', CheckSession, async (req, res) => {
         await OBJModel.findByIdAndRemove(req.params.id, (err, data) => {
             if (err) {
+                console.log(err)
                 res.status(500).json({
                     message: '500 Internal Server Error',
                     errror: err,
                     success: false
                 })
             }
-            if (!data) {
-                res.status(404).json({
-                    message: '404 object not found',
-                    errror: err,
-                    success: false
-                })
-            }
+
             res.status(200).json({
                 message: 'OK',
                 data: data,

@@ -2,9 +2,11 @@ const express = require('express');
 const router = express.Router();
 const CheckSession = require('./../auth/checkSession')
 const BuildBasicQueries = require('./../helpers/general_query.helper')
+var env = require('./../config/environment.config')
+const saltRounds = env.bcrypt_salt_rounds;
 const moment = require('moment');
 const bcrypt = require('bcryptjs');
-const saltRounds = 10;
+
 
 //Model
 const OBJModel = require('./../models/admin');
@@ -19,26 +21,29 @@ const _Population = [];
 const _Special = {
     post: [{
         path: 'dt_reg',
-        value: moment().format(),
-        inner: false
+        special: true,
+        type: 'date'
     }, {
         path: 'password',
-        value: function (val) {
-            const hash = bcrypt.hash(val, saltRounds);
-            return hash;
-        },
-        inner: true
+        special: true,
+        type: 'pass'
     }],
     put: [{
         path: 'password',
-        value: function (val) {
-            const hash = bcrypt.hash(val, saltRounds);
-            return hash.then(value => { return value });
-        },
-        inner: true
+        special: true,
+        type: 'pass'
+
     }]
 }
 
-BuildBasicQueries(router, OBJModel, _Population, CheckSession, _Special)
+const _addData = {
+    post: [{
+        path: 'dt_reg',
+        value: moment().format()
+    }],
+    put: []
+}
+
+BuildBasicQueries(router, OBJModel, _Population, CheckSession, _Special, _addData)
 
 module.exports = router;

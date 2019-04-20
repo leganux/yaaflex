@@ -2,17 +2,16 @@
 $(document).ready(function () {
 
     var UPDATE = '';
-
     var DT = $('#roles_admin').DataTable({
         language: DT_Lang,
         data: {},
         columns: [
             {
-                data: "username",
+                data: "name",
 
             },
             {
-                data: "dt_reg",
+                data: "description",
 
             },
             {
@@ -35,44 +34,40 @@ $(document).ready(function () {
         $('#txt_description').val('')
     });
 
-
     $(document).on('click', '.EditElement', function () {
         UPDATE = $(this).val();
         HoldOn.open(HoldOptions);
         $.ajax({
-            url: "/api/admin/" + UPDATE,
+            url: "/api/admin_roles/" + UPDATE,
         }).done(function (data) {
             HoldOn.close();
             if (data.success == true) {
                 data = data.data;
-                $('#txt_username').val(data.username)
-                $('#txt_email').val(data.email)
-                $('#txt_password').val(data.password)
-                $('#txt_active').val(data.active.toString())
-                $('#txt_role').val(data.role)
+                $('#txt_name').val(data.name)
+                $('#txt_description').val(data.description)
                 $('#myDataModal').modal('show');
             }
         }).fail(function (err) {
             HoldOn.close();
-            alertify.error('Ocurrio un error  // An error have been ocurred');
+            alertify.error(lx_i18n.txt_txt_an_error_occured);
             console.error(err);
         });
     });
 
     $(document).on('click', '.DeleteElement', function () {
         DELETE = $(this).val();
-        alertify.confirm('Confirma eliminar', '¿Seguro que desea eliminar este elemento? Esta Accion no tiene retorno.!', function () {
+        alertify.confirm(lx_i18n.txt_fonfirm_delete, lx_i18n.txt_fonfirm_delete_question, function () {
             HoldOn.open(HoldOptions);
             $.ajax({
-                url: "/api/admin/" + DELETE,
+                url: "/api/admin_roles/" + DELETE,
                 method: "DELETE"
             }).done(function (data) {
                 HoldOn.close();
-                traeAdministradores();
-                alertify.success('Eliminado correctamente // Delete success ')
+                GetScreenData();
+                alertify.success(lx_i18n.txt_delete_correctly)
             }).fail(function (err) {
                 HoldOn.close();
-                alertify.error('Ocurrio un error  // An error have been ocurred');
+                alertify.error(lx_i18n.txt_txt_an_error_occured);
                 console.error(err);
             });
         }, function () {
@@ -81,41 +76,34 @@ $(document).ready(function () {
 
     });
 
-
-    var traeAdministradores = function () {
+    var GetScreenData = function () {
         DT.clear().draw();
         HoldOn.open(HoldOptions);
         $.ajax({
-            url: "/api/admin",
+            url: "/api/admin_roles",
         }).done(function (data) {
 
             HoldOn.close();
             if (data.success == true) {
                 if (Number(data.count) > 0) {
-
                     DT.clear().rows.add(data.data).draw();
                 }
             }
         }).fail(function (err) {
             HoldOn.close();
-            alertify.error('Ocurrio un error  // An error have been ocurred');
+            alertify.error(lx_i18n.txt_txt_an_error_occured);
             console.error(err);
         });
     }
 
-
-
-
     $('#SaveChanges').click(function () {
-        if ($('#txt_username').val() !== '' && $('#txt_email').val() && $('#txt_password').val()) {
+        if ($('#txt_name').val() !== '' && $('#txt_description').val()) {
             var data = {
-                username: $('#txt_username').val(),
-                email: $('#txt_email').val(),
-                password: $('#txt_password').val(),
-                active: $('#txt_active').val(),
-                role: $('#txt_role').val(),
+                name: $('#txt_name').val(),
+                description: $('#txt_description').val(),
+                active: true,
             }
-            var url = "/api/admin";
+            var url = "/api/admin_roles";
             var method = 'POST';
             if (UPDATE !== '') {
                 url = url + '/' + UPDATE;
@@ -128,21 +116,19 @@ $(document).ready(function () {
             }).done(function (data) {
                 HoldOn.close();
                 $('#myDataModal').modal('hide');
-                traeAdministradores();
-                alertify.success('Guardado con exito! // Saved correctly');
+                GetScreenData();
+                alertify.success(lx_i18n.txt_save_correctly);
             }).fail(function (err) {
                 HoldOn.close();
-                alertify.error('Ocurrio un error con  // An error have been ocurred ');
+                alertify.error(lx_i18n.txt_txt_an_error_occured);
                 console.error(err);
             });
 
         } else {
-            alertify.error('Ingrese todos los datos / Insert all data');
-            console.error(err);
+            alertify.error(lx_i18n.txt_full_all_data);
         }
 
     });
 
-
-    traeAdministradores();
+    GetScreenData();
 });
