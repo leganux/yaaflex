@@ -9,39 +9,20 @@ const bcrypt = require('bcryptjs');
 
 
 //Model
-const OBJModel = require('./../models/admin');
+const OBJModel = require('./../models/user_roles.model');
 
 //Other Models
 
-const AdminRoles = require('./../models/admin_roles.model');
-
 //population
-const _Population = [
-    {
-        path: 'role',
-        model: AdminRoles,
-        //select:{}
-    }
-];
-
-// Special
+const _Population = [];
 
 const _Special = {
     post: [{
         path: 'dt_reg',
         special: true,
         type: 'date'
-    }, {
-        path: 'password',
-        special: true,
-        type: 'pass'
     }],
-    put: [{
-        path: 'password',
-        special: true,
-        type: 'pass'
-
-    }]
+    put: []
 }
 
 const _addData = {

@@ -1,5 +1,5 @@
-const idDEV = false;
-const Admin = require('../models/admin');
+
+
 var originRedirect = '/lx_admin';
 
 async function loggedIn(req, res, next) {

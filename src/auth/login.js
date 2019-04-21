@@ -3,7 +3,7 @@ const router = express.Router();
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 const Admin = require('../models/admin');
-const User = require('../models/user');
+const User = require('../models/user.model');
 const bcrypt = require('bcryptjs');
 
 

@@ -1,0 +1,76 @@
+doctype html
+html(lang='es')
+    head
+        include ./head.pug
+    body
+        #wrapper
+            include ./nav.pug
+        #page-wrapper
+            .container-fluid
+                .row
+                    .col-lg-12
+                    h1.page-header #{i18n.admin_title_access_routes }
+            .row
+                .col-md-4.col-sm-12
+                    button#nuevo_elemento.btn.btn-block.btn-success.btn-outline #{i18n.admin_button_new}
+                .col-md-4.col-sm-12 
+
+                .col-md-4.col-sm-12 
+            
+            br
+            .row
+                .col-sm-12
+                    .panel.panel-default
+                        .panel-heading
+                            |  #{i18n.admin_route_lis}
+                        .panel-body
+                            table#tbl_.display.table.table-striped.table-bordered.table-hover(width='100%')
+                                thead
+                                    tr
+                                        th #{i18n.admin_routes_description}
+                                        th #{i18n.admin_routes_route}
+                                        th #{i18n.admin_routes_method}
+                                        th #{i18n.admin_routes_allowed_roles}
+                                        th #{i18n.admin_routes_actions}
+                                       
+
+
+        #myDataModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='basicModal', aria-hidden='true',data-backdrop="static", data-keyboard="false")
+            .modal-dialog
+                .modal-content
+                    .modal-header
+                        button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+                        h4#myModalLabel.modal-title #{i18n.admin_modal_save_edit}
+                    .modal-body
+                        #SaveToModal_ES.form-group
+                            label  #{i18n.admin_modal_add_description_route} 
+                            textarea( rows="5")#txt_description.form-control
+
+                            label  #{i18n.admin_modal_add_route} 
+                            input(type="text",placeholder="EX: /api/users")#txt_route.form-control
+                            br
+                            label  #{i18n.admin_modal_add_method} 
+                            select(multiple="true")#txt_methods.form-control
+                                option(value="POST") POST
+                                option(value="GET") GET
+                                option(value="PUT") PUT
+                                option(value="DELETE") DELETE
+                            br    
+                            label  #{i18n.admin_modal_add_roles} 
+                            select(multiple="true")#txt_roles.form-control
+                             
+                            
+                                
+
+
+
+                    .modal-footer
+                        button.btn.btn-default(type='button', data-dismiss='modal') #{i18n.admin_modal_cancel}
+                        button#SaveChanges.btn.btn-primary(type='button') #{i18n.admin_modal_save}
+
+
+
+
+    include ./scripts.pug
+    script(src=config.path.AssetsCP+'/code/js/route_access.js?v='+Math.random())
+

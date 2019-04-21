@@ -9,17 +9,17 @@ const bcrypt = require('bcryptjs');
 
 
 //Model
-const OBJModel = require('./../models/admin');
+const OBJModel = require('./../models/user.model');
 
 //Other Models
 
-const AdminRoles = require('./../models/admin_roles.model');
+const UserRoles = require('./../models/user_roles.model');
 
 //population
 const _Population = [
     {
         path: 'role',
-        model: AdminRoles,
+        model: UserRoles,
         //select:{}
     }
 ];

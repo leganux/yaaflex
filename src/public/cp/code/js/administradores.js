@@ -3,7 +3,6 @@ $(document).ready(function () {
 
     var UPDATE = '';
 
-
     var DT = $('#administradores').DataTable({
         language: DT_Lang,
         data: {},
@@ -33,6 +32,10 @@ $(document).ready(function () {
             },
             {
                 data: "role",
+                render: function (data, x, row) {
+                    console.log(data, 'data')
+                    return data.name;
+                }
 
             },
             {
@@ -75,14 +78,14 @@ $(document).ready(function () {
             }
         }).fail(function (err) {
             HoldOn.close();
-            alertify.error('Ocurrio un error  // An error have been ocurred');
+            alertify.error(lx_i18n.txt_txt_an_error_occured);
             console.error(err);
         });
     });
 
     $(document).on('click', '.DeleteElement', function () {
         DELETE = $(this).val();
-        alertify.confirm('Confirma eliminar', '¿Seguro que desea eliminar este elemento? Esta Accion no tiene retorno.!', function () {
+        alertify.confirm(lx_i18n.txt_fonfirm_delete, lx_i18n.txt_fonfirm_delete_question, function () {
             HoldOn.open(HoldOptions);
             $.ajax({
                 url: "/api/admin/" + DELETE,
@@ -90,10 +93,10 @@ $(document).ready(function () {
             }).done(function (data) {
                 HoldOn.close();
                 traeAdministradores();
-                alertify.success('Eliminado correctamente // Delete success ')
+                alertify.success(lx_i18n.txt_delete_correctly)
             }).fail(function (err) {
                 HoldOn.close();
-                alertify.error('Ocurrio un error  // An error have been ocurred');
+                alertify.error(lx_i18n.txt_txt_an_error_occured);
                 console.error(err);
             });
         }, function () {
@@ -119,13 +122,10 @@ $(document).ready(function () {
             }
         }).fail(function (err) {
             HoldOn.close();
-            alertify.error('Ocurrio un error  // An error have been ocurred');
+            alertify.error(lx_i18n.txt_txt_an_error_occured);
             console.error(err);
         });
     }
-
-
-
 
     $('#SaveChanges').click(function () {
         if ($('#txt_username').val() !== '' && $('#txt_email').val() && $('#txt_password').val()) {
@@ -150,20 +150,50 @@ $(document).ready(function () {
                 HoldOn.close();
                 $('#myDataModal').modal('hide');
                 traeAdministradores();
-                alertify.success('Guardado con exito! // Saved correctly');
+                alertify.success(lx_i18n.txt_save_correctly);
             }).fail(function (err) {
                 HoldOn.close();
-                alertify.error('Ocurrio un error con  // An error have been ocurred ');
+                alertify.error(lx_i18n.txt_txt_an_error_occured);
                 console.error(err);
             });
 
         } else {
-            alertify.error('Ingrese todos los datos / Insert all data');
-            console.error(err);
+            alertify.error(lx_i18n.txt_full_all_data);
+
         }
 
     });
 
-
     traeAdministradores();
+
+    var fillCatalogues = function () {
+
+        $('#txt_role').html('');
+        HoldOn.open(HoldOptions);
+        $.getJSON('/api/admin_roles', {
+            strictsearch: {
+                active: true
+            },
+            sort: {
+                dt_reg: "asc"
+            },
+            //avoid:{},
+            //paginate:{page:0,limit:0},
+        }, function (data) {
+            if (data.success) {
+                $.each(data.data, function (i, item) {
+                    $('#txt_role').append('<option value="' + item._id + '">' + item.name + '</option>')
+                });
+                HoldOn.close();
+            }
+        }).fail(function (err) {
+            console.log(err)
+            HoldOn.close();
+            alertify.error(lx_i18n.txt_txt_an_error_occured);
+        });
+
+    }
+
+    fillCatalogues();
+
 });

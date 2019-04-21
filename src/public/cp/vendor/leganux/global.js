@@ -478,3 +478,31 @@ else {
     lxLang = 'EN';
     lxSetCookie('lxLang', 'EN');
 }
+
+function formatState(opt) {
+    if (!opt.id) {
+        return opt.text.toUpperCase();
+    }
+
+    var optimage = $(opt.element).attr('data-image');
+
+    if (!optimage) {
+        return opt.text;
+    } else {
+        var $opt = $(
+            '<span ><img src="' + optimage + '" width="60px" /> ' + opt.text + '</span>'
+        );
+        return $opt;
+    }
+};
+
+var lxSelect2 = function (el, parent) {
+    $(el).select2({
+        width: '100%',
+        templateResult: formatState,
+        placeholder: "Select...",
+        allowClear: true,
+        dropdownParent: $(parent)
+    });
+
+}

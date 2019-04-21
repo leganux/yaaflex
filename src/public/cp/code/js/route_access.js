@@ -2,16 +2,25 @@
 $(document).ready(function () {
 
     var UPDATE = '';
-    var DT = $('#roles_admin').DataTable({
+    var DT = $('#tbl_').DataTable({
         language: DT_Lang,
         data: {},
         columns: [
+
             {
-                data: "name",
+                data: "description",
 
             },
             {
-                data: "description",
+                data: "path",
+
+            },
+            {
+                data: "method",
+
+            },
+            {
+                data: "roles",
 
             },
             {
@@ -26,6 +35,12 @@ $(document).ready(function () {
 
         ]
     });
+
+
+
+
+    lxSelect2('#txt_roles', '#myDataModal');
+    lxSelect2('#txt_methods', '#myDataModal');
 
     $('#nuevo_elemento').click(function () {
         $('#myDataModal').modal('show');

@@ -1,18 +1,22 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
+const User_Roles = require('./user_roles.model');
+
 const UserSchema = new Schema({
-    username: { type: String, required: false, unique: true },
+    username: { type: String, required: true, unique: true },
     email: { type: String, required: false },
     password: { type: String, required: false },
     dt_reg: { type: Date, required: true },
-    provider_id: { type: String, required: true },
-    provider: { type: String, required: true },
-    provider_picture: { type: String, required: true },
-    full_name: { type: String, required: true },
+    role: { type: Schema.Types.ObjectId, required: false, ref: User_Roles },
+
+    
+    provider_id: { type: String, required: false },
+    provider: { type: String, required: false },
+    user_picture: { type: String, required: false },
+    full_name: { type: String, required: false },
     active: { type: Boolean, required: true, default: true },
-    rieviewer: { type: Boolean, required: true, default: false },
-    isNonUserEdited: { type: Boolean, required: true, default: true },
+   
     gender: { type: String, required: false },
     lang: { type: String, required: false },
     age: { type: String, required: false },

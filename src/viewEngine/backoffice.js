@@ -80,9 +80,76 @@ router.get('/administradores', CheckSession, async (req, res) => {
 
     });
 });
+router.get('/users', CheckSession, async (req, res) => {
+    res.render("backoffice/users", {
+        data: {},
+        config: {
+            langTexts: JSON.stringify(cFunctions.getUserLang(req)),
+            path: RoutesConfig,
+            assets: assets,
+            filesPath: RoutesConfig.FilesPath
+        },
+        seo: {
+            title: 'YAAFLEX - Yet another amazing framework by leganux',
+            description: 'YAAFLEX - yet another amazing framework by leganux',
+            image: 'http://cdn.leganux.com/IMG/integrado.png',
+            domain: req.get('host'),
+            url: req.protocol + '://' + req.get('host') + req.originalUrl,
+            tw_posted_by: '@leganux',
+            og_type: 'article',
+        },
+        i18n: cFunctions.getUserLang(req)
+
+    });
+});
 
 router.get('/roles_admin', CheckSession, async (req, res) => {
     res.render("backoffice/roles_admin", {
+        data: {},
+        config: {
+            langTexts: JSON.stringify(cFunctions.getUserLang(req)),
+            path: RoutesConfig,
+            assets: assets,
+            filesPath: RoutesConfig.FilesPath
+        },
+        seo: {
+            title: 'YAAFLEX - Yet another amazing framework by leganux',
+            description: 'YAAFLEX - yet another amazing framework by leganux',
+            image: 'http://cdn.leganux.com/IMG/integrado.png',
+            domain: req.get('host'),
+            url: req.protocol + '://' + req.get('host') + req.originalUrl,
+            tw_posted_by: '@leganux',
+            og_type: 'article',
+        },
+        i18n: cFunctions.getUserLang(req)
+
+    });
+});
+
+router.get('/roles_user', CheckSession, async (req, res) => {
+    res.render("backoffice/roles_user", {
+        data: {},
+        config: {
+            langTexts: JSON.stringify(cFunctions.getUserLang(req)),
+            path: RoutesConfig,
+            assets: assets,
+            filesPath: RoutesConfig.FilesPath
+        },
+        seo: {
+            title: 'YAAFLEX - Yet another amazing framework by leganux',
+            description: 'YAAFLEX - yet another amazing framework by leganux',
+            image: 'http://cdn.leganux.com/IMG/integrado.png',
+            domain: req.get('host'),
+            url: req.protocol + '://' + req.get('host') + req.originalUrl,
+            tw_posted_by: '@leganux',
+            og_type: 'article',
+        },
+        i18n: cFunctions.getUserLang(req)
+
+    });
+});
+router.get('/routes_access', CheckSession, async (req, res) => {
+    res.render("backoffice/routes_access", {
         data: {},
         config: {
             langTexts: JSON.stringify(cFunctions.getUserLang(req)),

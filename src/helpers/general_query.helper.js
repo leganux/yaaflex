@@ -111,6 +111,9 @@ module.exports = function (router, OBJModel, _Population, CheckSession, _Special
 
         }
 
+        console.log('PSSSSSSSS____ ', busqueda)
+
+        //let query =  OBJModel.find({ name: 'Delhi' });
         let query = OBJModel.find(busqueda);
 
         if (like) {
@@ -135,7 +138,10 @@ module.exports = function (router, OBJModel, _Population, CheckSession, _Special
             });
         }
         query.exec((err, data) => {
+            console.log('**********data', data)
+
             if (err) {
+                console.log('**********err', err)
                 return res.status(500).json({
                     message: '500 Internal Server Error',
                     error: err,
@@ -160,7 +166,7 @@ module.exports = function (router, OBJModel, _Population, CheckSession, _Special
 
     // GET  one  object by ID
     router.get('/:id', CheckSession, async (req, res) => {
-        let query =  OBJModel.findById(req.params.id);
+        let query = OBJModel.findById(req.params.id);
         if (_Population && _Population.length > 0) {
             _Population.map(function (item, i, arr) {
                 query.populate(item)
@@ -315,7 +321,7 @@ module.exports = function (router, OBJModel, _Population, CheckSession, _Special
             })
         };
 
-       
+
         await OBJModel.findByIdAndUpdate(req.params.id, { $set: newObject }, (err, data) => {
             if (err) {
                 res.status(500).json({
