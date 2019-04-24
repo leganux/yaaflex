@@ -9,7 +9,7 @@ html(lang='es')
             .container-fluid
                 .row
                     .col-lg-12
-                    h1.page-header #{i18n.admin_menu_routes_access_admin }
+                    h1.page-header #{i18n.admin_menu_routes_access_users }
             .row
                 .col-md-4.col-sm-12
                     button#nuevo_elemento.btn.btn-block.btn-success.btn-outline #{i18n.admin_button_new}
@@ -72,5 +72,5 @@ html(lang='es')
 
 
     include ./scripts.pug
-    script(src=config.path.AssetsCP+'/code/js/route_access.js?v='+Math.random())
+    script(src=config.path.AssetsCP+'/code/js/route_access_user.js?v='+Math.random())
 

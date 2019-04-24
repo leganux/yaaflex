@@ -12,7 +12,8 @@ module.exports = {
     admin_menu_admins: 'Admins',
     admin_menu_user_roles: 'User Roles',
     admin_menu_users: 'Users',
-    admin_menu_routes_access: 'Routes Access',
+    admin_menu_routes_access_admin: 'Routes Access Admin',
+    admin_menu_routes_access_users: 'Routes Access Users',
     admin_menu_file_manager: 'File Manager',
     admin_menu_logout: 'Logout',
 
@@ -66,6 +67,7 @@ module.exports = {
     //buttons 
 
     admin_button_new: 'New',
+    admin_button_upload: 'Upload',
 
     //titles 
     admin_title_admins: 'Admins',
@@ -73,6 +75,8 @@ module.exports = {
     admin_title_roles_users: 'Roles Users',
     admin_title_users: 'Users',
     admin_title_access_routes: 'Routes Access',
+    admin_title_file_manager: 'File Manager',
+    admin_title_files: 'Files',
 
     // rol admins zone 
     admin_adm_role_name: 'Role name',
@@ -126,6 +130,15 @@ module.exports = {
     admin_routes_allowed_roles: 'Allowed Roles',
     admin_routes_actions: 'Actions',
 
+    // File Admin Zone
+
+    admin_file_manager_id: 'ID',
+    admin_file_manager_original: 'Original Name',
+    admin_file_manager_name: 'Renamed',
+    admin_file_manager_public_path: 'Public URL',
+    admin_file_manager_disk_path: 'Disk Path',
+    admin_file_manager_folder: 'Folder',
+    admin_file_manager_actions: 'Actions',
 
 
 }

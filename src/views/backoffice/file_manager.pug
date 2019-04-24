@@ -1,0 +1,49 @@
+doctype html
+html(lang='es')
+    head
+        include ./head.pug
+    body
+        #wrapper
+            include ./nav.pug
+        #page-wrapper
+            .container-fluid
+                .row
+                    .col-lg-12
+                    h1.page-header #{i18n.admin_title_file_manager}
+            .row
+                .col-md-4.col-sm-12
+                    
+                .col-md-4.col-sm-12 
+                    input(type="file")#txt_file.form-control
+                    //input(type="text")#txt_file_save
+
+                .col-md-4.col-sm-12 
+                    button#upload_file.btn.btn-block.btn-success.btn-outline #{i18n.admin_button_upload}
+            
+            br
+            .row
+                .col-sm-12
+                    .panel.panel-default
+                        .panel-heading
+                            |  #{i18n.admin_title_files}
+                        .panel-body
+                            table#tbl_.display.table.table-striped.table-bordered.table-hover(width='100%')
+                                thead
+                                    tr
+                                        th #{i18n.admin_file_manager_id}
+                                        th #{i18n.admin_file_manager_original}
+                                        th #{i18n.admin_file_manager_name}
+                                        th #{i18n.admin_file_manager_public_path}
+                                      
+                                        th #{i18n.admin_file_manager_folder}
+                                        th #{i18n.admin_file_manager_actions}
+                                       
+
+
+      
+
+
+
+    include ./scripts.pug
+    script(src=config.path.AssetsCP+'/code/js/FileManager.js?v='+Math.random())
+
