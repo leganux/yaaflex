@@ -15,6 +15,8 @@ router.use('/i18n', require('./lang.routes'));
 router.use('/user_routes', require('./user_access_routes.routes'));
 router.use('/admin_routes', require('./admin_access_routes.routes'));
 router.use('/file_admin', require('./fileAdmin.routes'));
+router.use('/article', require('./articles.routes'));
+router.use('/dPage', require('./dinamic_pages.routes'));
 
 
 module.exports = router;

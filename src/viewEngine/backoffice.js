@@ -217,6 +217,68 @@ router.get('/file_manager', CheckSession, async (req, res) => {
     });
 });
 
+router.get('/articles', CheckSession, async (req, res) => {
+    res.render("backoffice/articles", {
+        data: {},
+        config: {
+            langTexts: JSON.stringify(cFunctions.getUserLang(req)),
+            path: RoutesConfig,
+            assets: assets,
+            filesPath: RoutesConfig.FilesPath
+        },
+        seo: {
+            title: 'YAAFLEX - Yet another amazing framework by leganux',
+            description: 'YAAFLEX - yet another amazing framework by leganux',
+            image: 'http://cdn.leganux.com/IMG/integrado.png',
+            domain: req.get('host'),
+            url: req.protocol + '://' + req.get('host') + req.originalUrl,
+            tw_posted_by: '@leganux',
+            og_type: 'article',
+        },
+        i18n: cFunctions.getUserLang(req)
+
+    });
+});
+
+router.get('/dinamic_pages', CheckSession, async (req, res) => {
+    res.render("backoffice/dinamic_pages", {
+        data: {},
+        config: {
+            langTexts: JSON.stringify(cFunctions.getUserLang(req)),
+            path: RoutesConfig,
+            assets: assets,
+            filesPath: RoutesConfig.FilesPath
+        },
+        seo: {
+            title: 'YAAFLEX - Yet another amazing framework by leganux',
+            description: 'YAAFLEX - yet another amazing framework by leganux',
+            image: 'http://cdn.leganux.com/IMG/integrado.png',
+            domain: req.get('host'),
+            url: req.protocol + '://' + req.get('host') + req.originalUrl,
+            tw_posted_by: '@leganux',
+            og_type: 'article',
+        },
+        i18n: cFunctions.getUserLang(req)
+
+    });
+});
+
+router.get('/leganuxWB/:id', CheckSession, async (req, res) => {
+    var miID = req.params.id;
+    res.render("backoffice/leganux_editor", {
+        data: {
+            id: miID,
+            template: RoutesConfig.AssetsSite + '/bootswatch-dist/' + env.site_theme + '/bootstrap.css'
+        },
+        config: {
+            langTexts: JSON.stringify(cFunctions.getUserLang(req)),
+            path: RoutesConfig,
+        },
+        i18n: cFunctions.getUserLang(req)
+
+    });
+});
+
 
 
 

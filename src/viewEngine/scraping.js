@@ -40,7 +40,7 @@ function guardameloTantito(contenido) {
 
     fs.writeFile("./try.txt", contenido, function (err) {
         if (err) {
-            return console.log(err);
+            return console.error(err);
         }
     });
 }

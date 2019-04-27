@@ -187,7 +187,7 @@ $(document).ready(function () {
                 HoldOn.close();
             }
         }).fail(function (err) {
-            console.log(err)
+            console.error(err)
             HoldOn.close();
             alertify.error(lx_i18n.txt_txt_an_error_occured);
         });

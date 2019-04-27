@@ -1,0 +1,89 @@
+doctype html
+html(lang='es')
+    head
+        include ./head.pug
+    body
+        #wrapper
+            include ./nav.pug
+        #page-wrapper
+            .container-fluid
+                .row
+                    .col-lg-12
+                    h1.page-header #{i18n.admin_title_dinamic_pages}
+            .row
+                .col-md-4.col-sm-12
+                    button#nuevo_elemento.btn.btn-block.btn-success.btn-outline #{i18n.admin_button_new}
+                .col-md-4.col-sm-12 
+
+                .col-md-4.col-sm-12 
+
+            br
+            .row
+                .col-sm-12
+                    .panel.panel-default
+                        .panel-heading
+                            |  #{i18n.admin_title_dinamic_pages_list}
+                        .panel-body
+                            table#Table_.display.table.table-striped.table-bordered.table-hover(width='100%')
+                                thead
+                                    tr
+                                        th #{i18n.admin_articles_id}
+                                        th #{i18n.admin_articles_title}
+                                        th #{i18n.admin_articles_friendly_name}
+
+
+                                        th #{i18n.admin_articles_dt_reg}
+                                        th #{i18n.admin_articles_last_date_updated}
+                                        th #{i18n.admin_articles_active}
+                                        th #{i18n.admin_articles_autor}
+
+                                        th #{i18n.admin_articles_actions}
+
+
+        #myDataModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='basicModal', aria-hidden='true',data-backdrop="static", data-keyboard="false")
+            .modal-dialog.modal-lg
+                .modal-content
+                    .modal-header
+                        button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+                        h4#myModalLabel.modal-title #{i18n.admin_modal_save_edit}
+                    .modal-body
+
+                        label  #{i18n.admin_modal_add_title}
+                        input#txt_title.form-control(type="text")
+                        br
+                        label  #{i18n.admin_modal_add_fridendly_name}
+                        input#txt_f_name.form-control(type="text")
+                        br
+
+                    .modal-footer
+                        button.btn.btn-default(type='button', data-dismiss='modal') #{i18n.admin_modal_cancel}
+                        button#SaveChanges.btn.btn-primary(type='button') #{i18n.admin_modal_save}
+
+
+        #UploadTemplate_.modal.fade(tabindex='-1', role='dialog', aria-labelledby='basicModal', aria-hidden='true',data-backdrop="static", data-keyboard="false")
+            .modal-dialog
+                .modal-content
+                    .modal-header
+                        button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+                        h4#myModalLabel.modal-title #{i18n.admin_modal_save_edit}
+                    .modal-body
+
+                        label  #{i18n.admin_modal_select_template}
+                        input#txt_template_file.form-control(type="file", accept=".html")
+                        br
+                        textarea#txt_data_templete(name="",rows="5", style="display:none").form-control
+                        br
+
+                    .modal-footer
+                        button.btn.btn-default(type='button', data-dismiss='modal') #{i18n.admin_modal_cancel}
+                        button#SaveChangesTempModal.btn.btn-primary(type='button') #{i18n.admin_modal_save}
+
+
+
+
+
+
+
+    include ./scripts.pug
+    script(src=config.path.AssetsCP+'/code/js/dinamic_pages.js?v='+Math.random())
+

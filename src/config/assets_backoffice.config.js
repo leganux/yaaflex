@@ -1,6 +1,6 @@
 module.exports = {
     css: [
-        '/vendor/bootstrap/css/bootstrap.min.css', 
+        '/vendor/bootstrap/css/bootstrap.min.css',
         '/vendor/metisMenu/metisMenu.min.css',
         '/dist/css/sb-admin-2.css',
         '/vendor/datatables-plugins/dataTables.bootstrap.css',
@@ -20,6 +20,7 @@ module.exports = {
     js: [
         '/vendor/jquery/jquery.min.js',
         '/vendor/leganux/global.js',
+        '/vendor/voca/voca.js',
         '/code/js/common.js',
         '/vendor/bootstrap/js/bootstrap.min.js',
         '/vendor/metisMenu/metisMenu.min.js',

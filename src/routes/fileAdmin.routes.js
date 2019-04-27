@@ -31,7 +31,7 @@ router.delete('/FP/:id', CheckSession, async (req, res) => {
 
         await OBJModel.findByIdAndRemove(req.params.id, (err, data) => {
             if (err) {
-                console.log(err)
+            
                 res.status(500).json({
                     message: '500 Internal Server Error',
                     errror: err,

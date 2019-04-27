@@ -16,6 +16,8 @@ module.exports = {
     admin_menu_routes_access_users: 'Routes Access Users',
     admin_menu_file_manager: 'File Manager',
     admin_menu_logout: 'Logout',
+    admin_menu_articles: 'Blog Articles',
+    admin_menu_dinamic_pages: 'Dinamic Pages',
 
 
     //dashboard
@@ -63,11 +65,22 @@ module.exports = {
     admin_modal_add_route: 'Insert Route Path ',
     admin_modal_add_method: 'Select methods ',
     admin_modal_add_roles: 'Select roles ',
+    admin_modal_: 'Select roles ',
+
+    admin_modal_add_title: 'Insert the title',
+    admin_modal_add_fridendly_name: 'Insert the firendly name (URL)',
+    admin_modal_add_thumbnail: 'Select the thumbnail image',
+    admin_modal_add_extract: 'Write a little extract.',
+    admin_modal_add_tags: 'Insert the tags (separed by comma [,])',
+    admin_modal_add_content: 'Insert the content',
+    admin_modal_select_template: 'Select template',
 
     //buttons 
 
     admin_button_new: 'New',
     admin_button_upload: 'Upload',
+    admin_button_upload_bootstrap_template: 'Upload BS template',
+    admin_button_bs_template_editor: 'Open BS template editor',
 
     //titles 
     admin_title_admins: 'Admins',
@@ -77,6 +90,10 @@ module.exports = {
     admin_title_access_routes: 'Routes Access',
     admin_title_file_manager: 'File Manager',
     admin_title_files: 'Files',
+    admin_title_blog_articles: 'Blog Articles',
+    admin_title_articles_list: 'List of Articles',
+    admin_title_dinamic_pages: 'Dinamic Pages',
+    admin_title_dinamic_pages_list: 'List of Dinamic Pages',
 
     // rol admins zone 
     admin_adm_role_name: 'Role name',
@@ -139,6 +156,23 @@ module.exports = {
     admin_file_manager_disk_path: 'Disk Path',
     admin_file_manager_folder: 'Folder',
     admin_file_manager_actions: 'Actions',
+
+    //bolg articles zone 
+
+    admin_articles_id: 'ID',
+    admin_articles_title: 'Title',
+    admin_articles_friendly_name: 'Friendly Name',
+    admin_articles_thumbnail: 'Thumbnail',
+    admin_articles_extract: 'Extract',
+    admin_articles_dt_reg: 'Date publish',
+    admin_articles_active: 'Active',
+    admin_articles_last_date_updated: 'Date last update',
+    admin_articles_html_content: 'Html',
+    admin_articles_actions: 'Actions',
+    admin_articles_autor: 'Autor',
+    admin_articles_tags: 'Tags',
+
+    // 
 
 
 }

@@ -30,8 +30,13 @@ if (env.activeSSL) {
 }
 
 // parse application/json
-app.use(bodyParser.json({ limit: '100mb', type: 'application/json' }));
-app.use(bodyParser.urlencoded({ parameterLimit: 100000, limit: '100mb', extended: true }));
+
+//app.use(bodyParser());
+if (env.body_parser_json) {
+  app.use(bodyParser.json({ limit: '100mb', type: 'application/json' }));
+}
+app.use(bodyParser.urlencoded({ parameterLimit: 100000, limit: '100mb', extended: env.body_parser_extended }));
+
 
 // limit upload filisize
 app.use(fileUpload(

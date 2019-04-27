@@ -21,7 +21,10 @@ $(document).ready(function () {
             {
                 data: "password",
                 render: function (data) {
-                    return data.substring(0, 10) + '...';
+                    if (data) {
+                        return data.substring(0, 10) + '...';
+                    }
+                    return '_____';
                 },
 
             },
@@ -47,7 +50,11 @@ $(document).ready(function () {
             {
                 data: "user_picture",
                 render: function (data, x, row) {
-                    return '<img class="img img-thumbnail" src="' + data + '">'
+                    if (data) {
+                        return '<img class="img img-thumbnail" src="' + data + '">'
+                    }
+                    return ''
+
                 }
 
             },
@@ -58,8 +65,10 @@ $(document).ready(function () {
             {
                 data: "role",
                 render: function (data, x, row) {
-                    console.log(data, 'data')
-                    return data.name;
+                    if (data) {
+                        return data.name;
+                    }
+                    return '';
                 }
 
             },
@@ -173,7 +182,7 @@ $(document).ready(function () {
                 $('#txt_username').val(data.username)
                 $('#txt_email').val(data.email)
                 $('#txt_password').val(data.password)
-                $('#txt_role').val(data.role._id)
+                $('#txt_role').val(data.role ? data.role._id : '')
                 $('#txt_fullname').val(data.full_name)
                 $('#txt_gender').val(data.gender)
                 $('#txt_lang').val(data.lang)
@@ -188,41 +197,43 @@ $(document).ready(function () {
 
                 var SX = data;
 
+                if (SX.country && SX.country !== '') {
+                    $.getJSON('/api/state', {
+                        strictsearch: {
+                            country_id: SX.country
+                        }
+                    }, function (data2) {
+                        if (data2.success) {
+                            $.each(data2.data, function (i, item) {
+                                $('#txt_state').append('<option value="' + item.id + '">' + item.name + '</option>')
+                            });
+                            $('#txt_state').val(SX.state)
 
-                $.getJSON('/api/state', {
-                    strictsearch: {
-                        country_id: SX.country
-                    }
-                }, function (data2) {
-                    if (data2.success) {
-                        $.each(data2.data, function (i, item) {
-                            $('#txt_state').append('<option value="' + item.id + '">' + item.name + '</option>')
-                        });
-                        $('#txt_state').val(SX.state)
+                            $.getJSON('/api/city', {
+                                strictsearch: {
+                                    state_id: SX.state
+                                }
+                            }, function (data3) {
+                                if (data3.success) {
+                                    $.each(data3.data, function (i, item) {
+                                        $('#txt_city').append('<option value="' + item.id + '">' + item.name + '</option>')
+                                    });
+                                    $('#txt_city').val(SX.city)
+                                }
+                            }).fail(function (err) {
+                                console.error(err)
+                                HoldOn.close();
+                                alertify.error(lx_i18n.txt_txt_an_error_occured);
+                            });
 
-                        $.getJSON('/api/city', {
-                            strictsearch: {
-                                state_id: SX.state
-                            }
-                        }, function (data3) {
-                            if (data3.success) {
-                                $.each(data3.data, function (i, item) {
-                                    $('#txt_city').append('<option value="' + item.id + '">' + item.name + '</option>')
-                                });
-                                $('#txt_city').val(SX.city)
-                            }
-                        }).fail(function (err) {
-                            console.log(err)
-                            HoldOn.close();
-                            alertify.error(lx_i18n.txt_txt_an_error_occured);
-                        });
+                        }
+                    }).fail(function (err) {
+                        console.error(err)
+                        HoldOn.close();
+                        alertify.error(lx_i18n.txt_txt_an_error_occured);
+                    });
+                }
 
-                    }
-                }).fail(function (err) {
-                    console.log(err)
-                    HoldOn.close();
-                    alertify.error(lx_i18n.txt_txt_an_error_occured);
-                });
 
                 $('#myDataModal').modal('show')
             }
@@ -242,7 +253,7 @@ $(document).ready(function () {
                 method: "DELETE"
             }).done(function (data) {
                 HoldOn.close();
-                traeAdministradores();
+                TraeDataTable();
                 alertify.success(lx_i18n.txt_delete_correctly)
             }).fail(function (err) {
                 HoldOn.close();
@@ -264,7 +275,7 @@ $(document).ready(function () {
             method: 'PUT',
             data: { active: ch }
         }).done(function (data) {
-            traeAdministradores();
+            TraeDataTable();
             alertify.success(lx_i18n.txt_save_correctly);
         }).fail(function (err) {
 
@@ -274,7 +285,7 @@ $(document).ready(function () {
 
     })
 
-    var traeAdministradores = function () {
+    var TraeDataTable = function () {
         DT.clear().draw();
         HoldOn.open(HoldOptions);
         $.ajax({
@@ -284,7 +295,7 @@ $(document).ready(function () {
             HoldOn.close();
             if (data.success == true) {
                 if (Number(data.count) > 0) {
-
+                    console.log(data.data)
                     DT.clear().rows.add(data.data).draw();
                 }
             }
@@ -328,7 +339,7 @@ $(document).ready(function () {
             }).done(function (data) {
                 HoldOn.close();
                 $('#myDataModal').modal('hide');
-                traeAdministradores();
+                TraeDataTable();
                 alertify.success(lx_i18n.txt_save_correctly);
             }).fail(function (err) {
                 HoldOn.close();
@@ -343,7 +354,7 @@ $(document).ready(function () {
 
     });
 
-    traeAdministradores();
+    TraeDataTable();
 
     var fillCatalogues = function () {
 
@@ -367,7 +378,7 @@ $(document).ready(function () {
                 HoldOn.close();
             }
         }).fail(function (err) {
-            console.log(err)
+            console.error(err)
             HoldOn.close();
             alertify.error(lx_i18n.txt_txt_an_error_occured);
         });
@@ -388,7 +399,7 @@ $(document).ready(function () {
                 HoldOn.close();
             }
         }).fail(function (err) {
-            console.log(err)
+            console.error(err)
             HoldOn.close();
             alertify.error(lx_i18n.txt_txt_an_error_occured);
         });
@@ -409,7 +420,7 @@ $(document).ready(function () {
                 HoldOn.close();
             }
         }).fail(function (err) {
-            console.log(err)
+            console.error(err)
             HoldOn.close();
             alertify.error(lx_i18n.txt_txt_an_error_occured);
         });
@@ -436,7 +447,7 @@ $(document).ready(function () {
                 HoldOn.close();
             }
         }).fail(function (err) {
-            console.log(err)
+            console.error(err)
             HoldOn.close();
             alertify.error(lx_i18n.txt_txt_an_error_occured);
         });
@@ -458,7 +469,7 @@ $(document).ready(function () {
                 HoldOn.close();
             }
         }).fail(function (err) {
-            console.log(err)
+            console.error(err)
             HoldOn.close();
             alertify.error(lx_i18n.txt_txt_an_error_occured);
         });

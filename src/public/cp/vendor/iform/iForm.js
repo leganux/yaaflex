@@ -1552,8 +1552,7 @@ var iForm = function (SpaceSelector, ArrayForm, Options) {
             var fecha = item.minTime;
             fecha = fecha.replace(/:/g, '');
             var val2 = val.replace(/:/g, '');
-            console.log('fecha', fecha)
-            console.log('val2', val2)
+           
 
             if (Number(val2) < Number(fecha)) {
                 r = {
@@ -1581,8 +1580,7 @@ var iForm = function (SpaceSelector, ArrayForm, Options) {
             var fecha = item.maxTime;
             fecha = fecha.replace(/:/g, '');
             var val2 = val.replace(/:/g, '');
-            console.log('2fecha', fecha)
-            console.log('2val2', val2)
+         
 
             if (Number(val2) > Number(fecha)) {
                 r = {

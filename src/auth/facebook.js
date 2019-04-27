@@ -27,16 +27,16 @@ passport.use(new Strategy({
             }
             if (!data) {
                 const user = new User({
-                    isNonUserEdited: true,
+
                     username: profile.displayName.replace(/\s/g, '').substring(0, 10) + '_' + Buffer.from(profile.displayName).toString('base64').substring(0, 2) + moment().format('x').substring(10),
                     email: profile.emails[0].value,
                     dt_reg: moment().format(),
                     provider_id: profile.id,
                     provider: profile.provider,
-                    provider_picture: profile.photos[0].value,
+                    user_picture: profile.photos[0].value,
                     active: true,
                     full_name: profile.displayName,
-                    rieviewer: false
+
                 });
                 user.save((errs, datas) => {
                     if (errs) {

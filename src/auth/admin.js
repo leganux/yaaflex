@@ -6,10 +6,9 @@ const Admin = require('../models/admin');
 const bcrypt = require('bcryptjs');
 
 
-passport.use(new LocalStrategy({
+passport.use('admin-login', new LocalStrategy({
     usernameField: 'user',
     passwordField: 'password',
-
 },
     function (username, password, done) {
         Admin.findOne({ username: username }, function (err, admin) {
@@ -30,10 +29,12 @@ passport.use(new LocalStrategy({
 ));
 
 
-router.post('/', passport.authenticate('local', { failureRedirect: '/lx_admin', failWithError: true }),
+router.post('/', passport.authenticate('admin-login', { failureRedirect: '/lx_admin', failWithError: true }),
     function (req, res) {
         res.redirect('/lx_admin/dashboard');
     });
+
+
 
 
 module.exports = router;

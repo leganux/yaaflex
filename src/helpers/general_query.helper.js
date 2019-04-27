@@ -111,7 +111,7 @@ module.exports = function (router, OBJModel, _Population, CheckSession, _Special
 
         }
 
-        console.log('PSSSSSSSS____ ', busqueda)
+
 
         //let query =  OBJModel.find({ name: 'Delhi' });
         let query = OBJModel.find(busqueda);
@@ -138,10 +138,10 @@ module.exports = function (router, OBJModel, _Population, CheckSession, _Special
             });
         }
         query.exec((err, data) => {
-            console.log('**********data', data)
+
 
             if (err) {
-                console.log('**********err', err)
+
                 return res.status(500).json({
                     message: '500 Internal Server Error',
                     error: err,
@@ -174,7 +174,7 @@ module.exports = function (router, OBJModel, _Population, CheckSession, _Special
         }
         await query.exec((err, data) => {
             if (err) {
-                console.log(err);
+                console.error(err);
                 res.status(404).json({
                     message: '500 Internal Server Error',
                     error: err,
@@ -243,7 +243,7 @@ module.exports = function (router, OBJModel, _Population, CheckSession, _Special
 
         await obj.save((err, data) => {
             if (err) {
-                console.log(err)
+                console.error(err)
                 res.status(500).json({
                     message: '500 Internal Server Error',
                     errror: err,
@@ -349,7 +349,7 @@ module.exports = function (router, OBJModel, _Population, CheckSession, _Special
     router.delete('/:id', CheckSession, async (req, res) => {
         await OBJModel.findByIdAndRemove(req.params.id, (err, data) => {
             if (err) {
-                console.log(err)
+                console.error(err)
                 res.status(500).json({
                     message: '500 Internal Server Error',
                     errror: err,
