@@ -8,9 +8,11 @@ module.exports = {
     view_engine: 'pug',
     ssl_port: 443,
     no_ssl_port: 80,
-    site_theme: 'Darkly',
+    site_theme: 'Superhero',
     default_lang: 'EN',
     bcrypt_salt_rounds: 12,
+    default_no_loged_user_role_id: '5cbb61d9d35f4b615e0b8f9a',
+    default_register_loged_user_role_id: '5cbb61d9d35f4b615e0b8f9a',
 }
 
 /**

@@ -508,9 +508,17 @@ var lxSelect2 = function (el, parent) {
 }
 
 var extractBodyContent = function (yourStringValue) {
+    if (!yourStringValue || yourStringValue == '') {
+        return ''
+    }
     var strVal = yourStringValue;
     var pattern = /<body[^>]*>((.|[\n\r])*)<\/body>/im
     var array_matches = pattern.exec(strVal);
 
-    return array_matches[1] ? array_matches[1] : false
+    if (array_matches) {
+        return array_matches[1] ? array_matches[1] : false
+    }
+    return '';
+
+
 }
