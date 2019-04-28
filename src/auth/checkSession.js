@@ -114,7 +114,10 @@ async function loggedIn(req, res, next) {
                     if (metodsLS.includes(myMethod)) {
                         console.log('==PTHS==', item.path, reqURL);
 
+
                         if (item.path.includes(':') && (myMethod == 'GET' || myMethod == 'PUT' || myMethod == 'DELETE')) {
+
+
                             console.log('A');
                             if (reqURL.toLowerCase().trim().includes(item.path.split(':')[0].toLowerCase().trim())) {
                                 console.log('C');
