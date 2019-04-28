@@ -5,6 +5,9 @@ html
         
         
     body
+        include ./menu.pug
+        
+
         br
         br
         br
@@ -14,7 +17,7 @@ html
                 .col
                     center
 
-                        h1 Welcome to YAAFLEX v1.0.0.1 
+                        h1 Welcome to YAAFLEX v3.3.3 
                         img(src=config.path.AssetsSite + config.assets.img.logo.path, alt="")
                         h3 yet another amazing framework by leganux
                         p &copy; 2007 -2019  
@@ -32,6 +35,50 @@ html
                             a(href="http://docs.leganux.com", target="_blank") docs.leganux.com
                             |  soon
                         button.btn.btn-primary#activeVoice Say Hi! 
+            hr
+            .row
+                .col
+                    center
+                        h1 Examples
+            hr
+            .row
+                .col
+                    h3 Buttons
+                    button.btn.btn-primary(type='button') Primary
+                    button.btn.btn-secondary(type='button') Secondary
+                    button.btn.btn-success(type='button') Success
+                    button.btn.btn-info(type='button') Info
+                    button.btn.btn-warning(type='button') Warning
+                    button.btn.btn-danger(type='button') Danger
+                    button.btn.btn-link(type='button') Link
+                .col
+                    h3 Buttons outline
+                    button.btn.btn-outline-primary(type='button') Primary
+                    button.btn.btn-outline-secondary(type='button') Secondary
+                    button.btn.btn-outline-success(type='button') Success
+                    button.btn.btn-outline-info(type='button') Info
+                    button.btn.btn-outline-warning(type='button') Warning
+                    button.btn.btn-outline-danger(type='button') Danger
+                .col
+                    h3 Text
+                    h1 Heading 1
+                    h2 Heading 2
+                    h3 Heading 3
+                    h4 Heading 4
+                    h5 Heading 5
+                    h6 Heading 6
+                    h3
+                        | Heading
+                    small.text-muted with muted text
+                    p.lead Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+
+            
+                    
+
+
+
+                        
+
        
        
 

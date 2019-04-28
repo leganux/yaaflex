@@ -22,7 +22,13 @@ passport.use('admin-login', new LocalStrategy({
                     return done(null, false);
                 }
                 admin.isAdmin = true;
-                done(null, { session: admin, prop: { isAdmin: true } });
+                done(null, {
+                    session: admin,
+                    prop: {
+                        kind: 'admin',
+                        role: admin.role
+                    }
+                });
             });
         });
     }

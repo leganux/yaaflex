@@ -172,7 +172,10 @@ module.exports = {
     admin_articles_autor: 'Autor',
     admin_articles_tags: 'Tags',
 
-    // 
+    // FRONT
+
+    button_read_more: 'Read More...',
+
 
 
 }

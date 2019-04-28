@@ -1,6 +1,7 @@
 
 
 
+
 var llamaEqualizer = function (obj) {
     //$('.lnx_eqlzr, .lnx_eqlzr-square, .lnx_eqlzr-circle, .lnx_eqlzr-portrait, .lnx_eqlzr-landscape, .lnx_eqlzr-diamond').each(function (index, element) {
     $(obj).each(function (index, element) {

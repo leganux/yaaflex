@@ -99,4 +99,20 @@ functions_list.getUserLang = function (req) {
     return LangGlobal;
 }
 
+functions_list.extractBodyContent = function (yourStringValue) {
+    if (!yourStringValue || yourStringValue == '') {
+        return ''
+    }
+    var strVal = yourStringValue;
+    var pattern = /<body[^>]*>((.|[\n\r])*)<\/body>/im
+    var array_matches = pattern.exec(strVal);
+
+    if (array_matches) {
+        return array_matches[1] ? array_matches[1] : false
+    }
+    return '';
+
+
+}
+
 module.exports = functions_list;
