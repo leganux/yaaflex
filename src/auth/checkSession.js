@@ -47,8 +47,10 @@ var backToHome = function (req, res, next) {
     if (req.method == "GET" && (!reqURL.includes('?'))) {
         return res.status(404).redirect('/logout');
     } else {
+
         return res.status(403).json({
             message: '403 Forbidden',
+
             success: false
         });
     }
