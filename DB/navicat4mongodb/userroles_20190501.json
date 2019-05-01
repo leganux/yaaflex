@@ -1,0 +1,16 @@
+{
+    "RECORDS": [
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cbb61d9d35f4b615e0b8f9a"
+            },
+            "active": true,
+            "description": "a default role for users",
+            "dt_reg": "20/4/2019 18:13:25",
+            "name": "Deafult"
+        }
+    ]
+}

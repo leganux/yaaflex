@@ -12,6 +12,10 @@ const fs = require('fs')
 var session = require('express-session')
 var RedisStore = require('connect-redis')(session);
 
+
+
+
+
 /** Imports FRWRK  */
 const env = require('./config/environment.config')
 const ssl_routes = require('./config/ssl_routes.config')
@@ -29,7 +33,7 @@ if (env.activeSSL) {
   ca = fs.readFileSync(ssl_routes.chain, 'utf8');
 }
 
-// parse application/json
+
 
 //app.use(bodyParser());
 if (env.body_parser_json) {
@@ -94,6 +98,8 @@ app.use('/auth/login', require('./auth/login'));
 // Db connection
 const { mongoose } = require('./database');
 
+
+
 if (env.activeSSL) {
   const credentials = {
     key: privateKey,
@@ -105,17 +111,20 @@ if (env.activeSSL) {
       console.log('Https Server started at ' + env.ssl_port)
     })
 
-  http.createServer(app)
+  Server_ = http.createServer(app)
     .listen(env.no_ssl_port, function () {
       console.log('Http server start at ' + env.no_ssl_port)
     })
 
 } else {
-  http.createServer(app)
+  Server_ = http.createServer(app)
     .listen(env.no_ssl_port, function () {
       console.log('Http server start at port ' + env.no_ssl_port)
     })
 }
+
+
+
 
 
 if (env.environment == 'development' || env.environment == 'qa') {
@@ -145,10 +154,29 @@ app.use('/cdn/assets', express.static(path.join(__dirname, 'public')));
 //views
 app.set("views", path.join(__dirname, "views"));
 
+
+
+// group chat socket IO on port 3000
+var io = require('./socket')
+
+var chat = io
+  .of('/chat')
+  .on('connection', function (socket) {
+    console.log('an user connected');
+    //socket.broadcast.emit('hello everione');
+    chat.emit('chat:message', 'hi');
+    socket.on('chat:message', function (msg) {
+      console.log('mensaje' + msg)
+      chat.emit('chat:message', msg );
+    });
+    socket.on('disconnect', function () {
+      console.log('user disconnected');
+    });
+
+  });
+
+
 // error VIEWS
 app.use(function (req, res) {
   res.status('404').render("errors/err404", {});
 });
-
-
-

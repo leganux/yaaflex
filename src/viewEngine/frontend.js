@@ -175,7 +175,37 @@ router.get('/article/:name', CheckSession, async (req, res) => {
 
 });
 
+//SupportChat
+router.get('/chat', CheckSession, async (req, res) => {
+    GetPages(function (pages) {
+        res.render("front/chat",
+            {
+                data: { pages },
+                config: {
+                    theme: env.site_theme.toLowerCase(),
+                    langTexts: JSON.stringify(cFunctions.getUserLang(req)),
+                    path: RoutesConfig,
+                    assets: assets,
+                    filesPath: RoutesConfig.FilesPath
+                },
+                seo: {
+                    title: 'YAAFLEX :: Chat',
+                    description: 'YAAFLEX - yet another amazing framework by leganux',
+                    image: 'http://cdn.leganux.com/IMG/integrado.png',
+                    domain: req.get('host'),
+                    url: req.protocol + '://' + req.get('host') + req.originalUrl,
+                    tw_posted_by: '@leganux',
+                    og_type: 'article',
+                },
+                i18n: cFunctions.getUserLang(req)
+            });
+    });
 
+
+
+
+
+});
 
 
 

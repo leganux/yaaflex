@@ -1,0 +1,38 @@
+{
+    "RECORDS": [
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc4f6362c4b0a11c8d6e1da"
+            },
+            "active": true,
+            "dt_reg": "27/4/2019 21:44:37",
+            "dt_update": "28/4/2019 01:19:55",
+            "extract": "iditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitat",
+            "f_name": "second_post",
+            "html": "<p><span style=\"font-family: &quot;Open Sans&quot;, Arial, sans-serif; text-align: justify;\">iditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitat</span></p><p><span style=\"font-family: &quot;Open Sans&quot;, Arial, sans-serif; text-align: justify;\">iditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitat</span></p><p><span style=\"font-family: &quot;Open Sans&quot;, Arial, sans-serif; text-align: justify;\"><br></span></p><p style=\"text-align: center; \"><img src=\"/cdn/assets/files/summernote/LeganuxFileAdmin_Summernote_1556411946_scr.png\" style=\"width: 378.993px;\"><span style=\"font-family: &quot;Open Sans&quot;, Arial, sans-serif; text-align: justify;\"><br></span></p><p><span style=\"font-family: &quot;Open Sans&quot;, Arial, sans-serif; text-align: justify;\">iditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatç</span><span style=\"font-family: &quot;Open Sans&quot;, Arial, sans-serif; text-align: justify;\"><br></span><span style=\"font-family: &quot;Open Sans&quot;, Arial, sans-serif; text-align: justify;\"><br></span></p>",
+            "tags": "did, the, tags, appera, in the sone , tag",
+            "thumbnail": "/cdn/assets/files/articlethumbnail/LeganuxFileAdmin_articleThumbnail_1556411890_scr.png",
+            "title": "Second post"
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc502a4d6feb11eb18b89a2"
+            },
+            "active": true,
+            "dt_reg": "28/4/2019 01:31:22",
+            "dt_update": "28/4/2019 01:31:22",
+            "extract": "bjcsakbxivods v jdvbuids . vdjkbvudi vd v jdsbv89dwi vd kjl bdsuivds . ",
+            "f_name": "otro_post",
+            "html": "bjodsgbf89orwd . vwuiobvruwbuirwo . viorwhbviorw",
+            "tags": "sjkcbewu. ,,few feq ijfewm,f eavuiewbuifrw . e,,ew",
+            "thumbnail": "/cdn/assets/files/articlethumbnail/LeganuxFileAdmin_articleThumbnail_1556415122_scr.png",
+            "title": "Otro post"
+        }
+    ]
+}

@@ -1,0 +1,1 @@
+{"_id":{"$oid":"5cbb5607fb643b59be887703"},"username":"admin","email":"erickcruz@leganux.com","password":"$2y$12$coKRM8TS/W41KajOO8YJi.5iWJwilujpMB7hU8Pa9QtJL/U32Za0i","active":false,"role":{"$oid":"5cba9d07c9bef54bb60d2e0a"},"dt_reg":{"$date":1555781110000},"__v":0}

@@ -10,22 +10,21 @@
                         li.nav-item
                             a.nav-link(href='/')
                                 | Home 
-                                span.sr-only (current)
+                                
                         li.nav-item
                             a.nav-link(href='/blog') Blog
-                        li.nav-item 
-                            a.nav-link(href='#') |[Dynamic PAGES >> ]|
+                        li.nav-item
+                            a.nav-link(href='/chat') Chat
+                      
 
                         if data.pages
-                            each val in data.pages
-                                li.nav-item
-                                    a.nav-link(href='/page/'+val.f_name) #{val.title}
-                            
-                        
-                        
-                        
-                        li.nav-item 
-                            a.nav-link(href='#') |[ << Dynamic PAGES  ]|
+                            li.nav-item.dropdown
+                                a#navbardrop.nav-link.dropdown-toggle(href='#', data-toggle='dropdown')
+                                    | Dynamic Pages
+                                .dropdown-menu
+                                    each val in data.pages
+                                        a.dropdown-item(href='/page/'+val.f_name) #{val.title}
+                                    
 
                         li.nav-item
                             a.nav-link(target="_blank",href='http://erickcruz.leganux.com') About erick

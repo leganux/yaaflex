@@ -1,0 +1,121 @@
+{
+    "RECORDS": [
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc39cf5f9ecf02d0c06c89e"
+            },
+            "disk_path": "/Users/leganuxmac/Documents/node projects/yaaflex/src/public/files/articlethumbnail/LeganuxFileAdmin_articleThumbnail_1556323573_241.jpg",
+            "filename": "LeganuxFileAdmin_articleThumbnail_1556323573_241.jpg",
+            "folder": "articlethumbnail",
+            "original": "241982.jpg",
+            "public_path": "/cdn/assets/files/articlethumbnail/LeganuxFileAdmin_articleThumbnail_1556323573_241.jpg"
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc3a685933ff1330259105a"
+            },
+            "disk_path": "/Users/leganuxmac/Documents/node projects/yaaflex/src/public/files/summernote/LeganuxFileAdmin_Summernote_1556326021_241.jpg",
+            "filename": "LeganuxFileAdmin_Summernote_1556326021_241.jpg",
+            "folder": "summernote",
+            "original": "241961.jpg",
+            "public_path": "/cdn/assets/files/summernote/LeganuxFileAdmin_Summernote_1556326021_241.jpg"
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc3a7f1484d5d334012d644"
+            },
+            "disk_path": "/Users/leganuxmac/Documents/node projects/yaaflex/src/public/files/summernote/LeganuxFileAdmin_Summernote_1556326385_wp2.jpg",
+            "filename": "LeganuxFileAdmin_Summernote_1556326385_wp2.jpg",
+            "folder": "summernote",
+            "original": "wp2993988.jpg",
+            "public_path": "/cdn/assets/files/summernote/LeganuxFileAdmin_Summernote_1556326385_wp2.jpg"
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc3d48a0a54e14c3ba20263"
+            },
+            "disk_path": "/Users/leganuxmac/Documents/node projects/yaaflex/src/public/files/leganuxwbx_/LeganuxFileAdmin_leganuxWBx__1556337802_scr.png",
+            "filename": "LeganuxFileAdmin_leganuxWBx__1556337802_scr.png",
+            "folder": "leganuxwbx_",
+            "original": "Screen Shot 2019-04-24 at 1.22.27 PM.png",
+            "public_path": "/cdn/assets/files/leganuxwbx_/LeganuxFileAdmin_leganuxWBx__1556337802_scr.png"
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc3db4767f6fe507c35438c"
+            },
+            "disk_path": "/Users/leganuxmac/Documents/node projects/yaaflex/src/public/files/leganuxwbx/LeganuxFileAdmin_leganuxWBx_1556339527_scr.png",
+            "filename": "LeganuxFileAdmin_leganuxWBx_1556339527_scr.png",
+            "folder": "leganuxwbx",
+            "original": "Screen Shot 2019-04-24 at 1.22.27 PM.png",
+            "public_path": "/cdn/assets/files/leganuxwbx/LeganuxFileAdmin_leganuxWBx_1556339527_scr.png"
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc4f5892c4b0a11c8d6e1d7"
+            },
+            "disk_path": "/Users/leganuxmac/Documents/node projects/yaaflex/src/public/files/summernote/LeganuxFileAdmin_Summernote_1556411785_scr.png",
+            "filename": "LeganuxFileAdmin_Summernote_1556411785_scr.png",
+            "folder": "summernote",
+            "original": "Screen Shot 2019-04-25 at 11.30.40 AM.png",
+            "public_path": "/cdn/assets/files/summernote/LeganuxFileAdmin_Summernote_1556411785_scr.png"
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc4f5f22c4b0a11c8d6e1d8"
+            },
+            "disk_path": "/Users/leganuxmac/Documents/node projects/yaaflex/src/public/files/articlethumbnail/LeganuxFileAdmin_articleThumbnail_1556411890_scr.png",
+            "filename": "LeganuxFileAdmin_articleThumbnail_1556411890_scr.png",
+            "folder": "articlethumbnail",
+            "original": "Screen Shot 2019-04-27 at 2.10.00 PM.png",
+            "public_path": "/cdn/assets/files/articlethumbnail/LeganuxFileAdmin_articleThumbnail_1556411890_scr.png"
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc4f62a2c4b0a11c8d6e1d9"
+            },
+            "disk_path": "/Users/leganuxmac/Documents/node projects/yaaflex/src/public/files/summernote/LeganuxFileAdmin_Summernote_1556411946_scr.png",
+            "filename": "LeganuxFileAdmin_Summernote_1556411946_scr.png",
+            "folder": "summernote",
+            "original": "Screen Shot 2019-04-24 at 1.09.12 PM.png",
+            "public_path": "/cdn/assets/files/summernote/LeganuxFileAdmin_Summernote_1556411946_scr.png"
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc50292d6feb11eb18b89a1"
+            },
+            "disk_path": "/Users/leganuxmac/Documents/node projects/yaaflex/src/public/files/articlethumbnail/LeganuxFileAdmin_articleThumbnail_1556415122_scr.png",
+            "filename": "LeganuxFileAdmin_articleThumbnail_1556415122_scr.png",
+            "folder": "articlethumbnail",
+            "original": "Screen Shot 2019-04-25 at 11.30.40 AM (2).png",
+            "public_path": "/cdn/assets/files/articlethumbnail/LeganuxFileAdmin_articleThumbnail_1556415122_scr.png"
+        }
+    ]
+}

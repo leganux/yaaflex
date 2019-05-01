@@ -1,0 +1,45 @@
+{"_id":{"$oid":"5cc52ed2adc7623b05c5d1c8"},"roles":[{"$oid":"5cba9d07c9bef54bb60d2e0a"}],"description":"Access to website ","path":"/","method":"GET","__v":0}
+{"_id":{"$oid":"5cc52f33adc7623b05c5d1c9"},"roles":[{"$oid":"5cba9d07c9bef54bb60d2e0a"}],"description":"Acces to admin panel","path":"/lx_admin","method":"GET","__v":0}
+{"_id":{"$oid":"5cc52f47adc7623b05c5d1ca"},"roles":[{"$oid":"5cba9d07c9bef54bb60d2e0a"}],"description":"Acces to blog","path":"/blog","method":"GET","__v":0}
+{"_id":{"$oid":"5cc52fd5adc7623b05c5d1cc"},"roles":[{"$oid":"5cba9d07c9bef54bb60d2e0a"}],"description":"access to autentification","path":"/auth/:algo","method":"POST,GET,PUT,DELETE","__v":0}
+{"_id":{"$oid":"5cc5300dadc7623b05c5d1cd"},"roles":[{"$oid":"5cba9d07c9bef54bb60d2e0a"}],"description":"Acces to articles","path":"/article/:name","method":"GET","__v":0}
+{"_id":{"$oid":"5cc53037adc7623b05c5d1ce"},"roles":[{"$oid":"5cba9d07c9bef54bb60d2e0a"}],"description":"Get articles JSON","path":"/api/article","method":"GET","__v":0}
+{"_id":{"$oid":"5cc53057adc7623b05c5d1cf"},"roles":[{"$oid":"5cba9d07c9bef54bb60d2e0a"}],"description":"Dinamic pages","path":"/page/:name","method":"GET","__v":0}
+{"_id":{"$oid":"5cc53093adc7623b05c5d1d0"},"roles":[{"$oid":"5cba9d07c9bef54bb60d2e0a"}],"description":"Acces to dashboard","path":"/lx_admin/dashboard","method":"GET","__v":0}
+{"_id":{"$oid":"5cc53163e579473c9cb637da"},"roles":[{"$oid":"5cba9d07c9bef54bb60d2e0a"}],"description":"Acces to admin roles","path":"/lx_admin/roles_admin","method":"GET","__v":0}
+{"_id":{"$oid":"5cc5318de579473c9cb637db"},"roles":[{"$oid":"5cba9d07c9bef54bb60d2e0a"}],"description":"Admin roles API","path":"/api/admin_roles","method":"POST,GET,PUT,DELETE","__v":0}
+{"_id":{"$oid":"5cc531bae579473c9cb637dc"},"roles":[{"$oid":"5cba9d07c9bef54bb60d2e0a"}],"description":"Admin roles Edit and Delete","path":"/api/admin_roles/:id","method":"POST,GET,PUT,DELETE","__v":0}
+{"_id":{"$oid":"5cc53217e579473c9cb637dd"},"roles":[{"$oid":"5cba9d07c9bef54bb60d2e0a"}],"description":"Acces to admin","path":"/lx_admin/administradores","method":"GET","__v":0}
+{"_id":{"$oid":"5cc53256e579473c9cb637de"},"roles":[{"$oid":"5cba9d07c9bef54bb60d2e0a"}],"description":"Access to Admin API","path":"/api/admin/:id","method":"POST,GET,PUT,DELETE","__v":0}
+{"_id":{"$oid":"5cc53451a0fb8c3ce6d523a3"},"roles":[{"$oid":"5cba9d07c9bef54bb60d2e0a"}],"description":"acces to admin api","path":"/api/admin","method":"POST,GET","__v":0}
+{"_id":{"$oid":"5cc73e658ab66304ccaa728e"},"roles":[{"$oid":"5cba9d07c9bef54bb60d2e0a"}],"description":"access to dinamic page","path":"/api/dPage/:name","method":"POST,GET","__v":0}
+{"_id":{"$oid":"5cc73e868ab66304ccaa728f"},"roles":[{"$oid":"5cba9d07c9bef54bb60d2e0a"}],"description":"Acces to dinamic pages api","path":"/api/dPage","method":"GET,PUT,DELETE","__v":0}
+{"_id":{"$oid":"5cc73f208ab66304ccaa7290"},"roles":[{"$oid":"5cba9d07c9bef54bb60d2e0a"}],"description":"acces to routes api","path":"/api/article/:name","method":"GET,PUT,DELETE","__v":0}
+{"_id":{"$oid":"5cc73f6d8ab66304ccaa7291"},"roles":[{"$oid":"5cba9d07c9bef54bb60d2e0a"}],"description":"Acces api articles","path":"/api/article","method":"POST,GET","__v":0}
+{"_id":{"$oid":"5cc73fbe8ab66304ccaa7292"},"roles":[{"$oid":"5cba9d07c9bef54bb60d2e0a"}],"description":"file admin api","path":"/api/file_admin","method":"POST,GET","__v":0}
+{"_id":{"$oid":"5cc73fda8ab66304ccaa7293"},"roles":[{"$oid":"5cba9d07c9bef54bb60d2e0a"}],"description":"File admin API","path":"/api/file_admin/:d","method":"POST,GET,PUT","__v":0}
+{"_id":{"$oid":"5cc740158ab66304ccaa7294"},"roles":[{"$oid":"5cba9d07c9bef54bb60d2e0a"}],"description":"Admin routes API","path":"/api/admin_routes/:id","method":"GET,PUT,DELETE","__v":0}
+{"_id":{"$oid":"5cc740298ab66304ccaa7295"},"roles":[{"$oid":"5cba9d07c9bef54bb60d2e0a"}],"description":"API admin routes\n","path":"/api/admin_routes","method":"POST,GET","__v":0}
+{"_id":{"$oid":"5cc740a58ab66304ccaa7296"},"roles":[{"$oid":"5cba9d07c9bef54bb60d2e0a"}],"description":"Acces to API uswr rouytes","path":"/api/user_routes","method":"POST,GET","__v":0}
+{"_id":{"$oid":"5cc740ea8ab66304ccaa7297"},"roles":[{"$oid":"5cba9d07c9bef54bb60d2e0a"}],"description":"API routes","path":"/api/user_routes/:id","method":"GET,PUT,DELETE","__v":0}
+{"_id":{"$oid":"5cc741508ab66304ccaa7298"},"roles":[{"$oid":"5cba9d07c9bef54bb60d2e0a"}],"description":"i18n rouets selector calaogue","path":"/api/i18n","method":"POST,GET","__v":0}
+{"_id":{"$oid":"5cc741838ab66304ccaa7299"},"roles":[{"$oid":"5cba9d07c9bef54bb60d2e0a"}],"description":"i18n API","path":"/api/i18n/:id","method":"GET,PUT,DELETE","__v":0}
+{"_id":{"$oid":"5cc741f38ab66304ccaa729a"},"roles":[{"$oid":"5cba9d07c9bef54bb60d2e0a"}],"description":"api country","path":"/api/country","method":"GET","__v":0}
+{"_id":{"$oid":"5cc742058ab66304ccaa729b"},"roles":[{"$oid":"5cba9d07c9bef54bb60d2e0a"}],"description":"cities","path":"/api/city","method":"GET","__v":0}
+{"_id":{"$oid":"5cc742558ab66304ccaa729c"},"roles":[{"$oid":"5cba9d07c9bef54bb60d2e0a"}],"description":"State catalogue","path":"/api/state","method":"GET","__v":0}
+{"_id":{"$oid":"5cc754208ab66304ccaa729d"},"roles":[{"$oid":"5cba9d07c9bef54bb60d2e0a"}],"description":"API user","path":"/api/user","method":"POST,GET","__v":0}
+{"_id":{"$oid":"5cc7543b8ab66304ccaa729e"},"roles":[{"$oid":"5cba9d07c9bef54bb60d2e0a"}],"description":"Api user ","path":"/api/user/:","method":"GET,PUT,DELETE","__v":0}
+{"_id":{"$oid":"5cc7548e8ab66304ccaa729f"},"roles":[{"$oid":"5cba9d07c9bef54bb60d2e0a"}],"description":"Api user","path":"/api/user_roles/:id","method":"GET,PUT,DELETE","__v":0}
+{"_id":{"$oid":"5cc754a38ab66304ccaa72a0"},"roles":[{"$oid":"5cba9d07c9bef54bb60d2e0a"}],"description":"/api/user_roles","path":"/api/user_roles","method":"POST,GET","__v":0}
+{"_id":{"$oid":"5cc755278ab66304ccaa72a1"},"roles":[{"$oid":"5cba9d07c9bef54bb60d2e0a"}],"description":"screen  user roles","path":"/lx_admin/roles_user","method":"GET","__v":0}
+{"_id":{"$oid":"5cc755538ab66304ccaa72a2"},"roles":[{"$oid":"5cba9d07c9bef54bb60d2e0a"}],"description":"screen users","path":"/lx_admin/users","method":"GET","__v":0}
+{"_id":{"$oid":"5cc755ca8ab66304ccaa72a3"},"roles":[{"$oid":"5cba9d07c9bef54bb60d2e0a"}],"description":"Screen routes access","path":"/lx_admin/routes_access","method":"GET","__v":0}
+{"_id":{"$oid":"5cc755ff8ab66304ccaa72a4"},"roles":[{"$oid":"5cba9d07c9bef54bb60d2e0a"}],"description":"Screen routes user","path":"/lx_admin/routes_access_user","method":"GET","__v":0}
+{"_id":{"$oid":"5cc756388ab66304ccaa72a5"},"roles":[{"$oid":"5cba9d07c9bef54bb60d2e0a"},{"$oid":"5cbb4f385b7f7152f9208069"}],"description":"File manager screen","path":"/lx_admin/file_manager","method":"GET","__v":0}
+{"_id":{"$oid":"5cc756648ab66304ccaa72a6"},"roles":[{"$oid":"5cba9d07c9bef54bb60d2e0a"}],"description":"Blog articles screen ","path":"/lx_admin/articles","method":"GET","__v":0}
+{"_id":{"$oid":"5cc756948ab66304ccaa72a7"},"roles":[{"$oid":"5cba9d07c9bef54bb60d2e0a"}],"description":"Screen dinamic","path":"/lx_admin/dinamic_pages","method":"GET","__v":0}
+{"_id":{"$oid":"5cc8dfaaa7f1d32bfa761cab"},"roles":[{"$oid":"5cba9d07c9bef54bb60d2e0a"},{"$oid":"5cbb4f385b7f7152f9208069"}],"description":"Exit Zero","path":"/logout","method":"GET","__v":0}
+{"_id":{"$oid":"5cc8e378179de52c4a574a6a"},"roles":[{"$oid":"5cba9d07c9bef54bb60d2e0a"}],"description":"chat access site","path":"/chat","method":"GET","__v":0}
+{"_id":{"$oid":"5cc8f6fe667cca34b230e35f"},"roles":[{"$oid":"5cba9d07c9bef54bb60d2e0a"}],"description":"allow socket","path":"/socket.io/:","method":"POST,GET,PUT,DELETE","__v":0}
+{"_id":{"$oid":"5cc8f716667cca34b230e360"},"roles":[{"$oid":"5cba9d07c9bef54bb60d2e0a"}],"description":"socket","path":"/socket.io","method":"POST,GET,PUT,DELETE","__v":0}
+{"_id":{"$oid":"5cc8f793667cca34b230e364"},"roles":[{"$oid":"5cba9d07c9bef54bb60d2e0a"},{"$oid":"5cbb4f385b7f7152f9208069"}],"description":"socket","path":"/socket.io/","method":"POST,GET,PUT,DELETE","__v":0}

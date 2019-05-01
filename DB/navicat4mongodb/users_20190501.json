@@ -1,0 +1,37 @@
+{
+    "RECORDS": [
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc233f191d1500a382a132f"
+            },
+            "active": true,
+            "adress": "12345",
+            "age": "0",
+            "cellphone": "12345",
+            "city": "27999",
+            "country": {
+                "$numberInt": "142"
+            },
+            "dt_reg": "25/4/2019 22:25:53",
+            "email": "telodijeangel@gmail.com",
+            "full_name": "Angel Erick Cruz",
+            "gender": "M",
+            "lang": "EN",
+            "password": "$2a$12$EoCneOED/lAoifb9rhJhoOXvSG5QWGi3SPL3Hi/x7bA4tJzrgUWZ6",
+            "phone": "12345",
+            "provider": "facebook",
+            "provider_id": "2218703231515510",
+            "role": {
+                "$oid": "5cbb61d9d35f4b615e0b8f9a"
+            },
+            "state": {
+                "$numberInt": "2440"
+            },
+            "username": "AngelErick_QW109",
+            "zip_code": "123456"
+        }
+    ]
+}

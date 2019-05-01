@@ -45,9 +45,8 @@ var ERR404 = function (req, res, next) {
 var backToHome = function (req, res, next) {
     var reqURL = req.originalUrl;
     if (req.method == "GET" && (!reqURL.includes('?'))) {
-        return res.status(404).redirect('/logout');
+        return res.status(403).render('errors/err403');
     } else {
-
         return res.status(403).json({
             message: '403 Forbidden',
 
@@ -57,16 +56,16 @@ var backToHome = function (req, res, next) {
 }
 
 async function loggedIn(req, res, next) {
-    //next(); return 0;
+    //next(); return 0;   // uncomment this line to allow access all urls
     var type = 'user';
     var role = env.default_no_loged_user_role_id;
     var reqURL = req.originalUrl;
     var myMethod = req.method;
     myMethod = myMethod.toUpperCase()
 
-    console.log('REQUESTEDURL ', reqURL);
+
     if (reqURL == '/' || req == '/lx_admin' || req == '/logout') {
-        console.log('Instant next ', reqURL);
+
         next();
         return true;
     }
@@ -77,7 +76,7 @@ async function loggedIn(req, res, next) {
         type = req.user.prop.kind;
         role = req.user.prop.role;
     }
-    console.log('KINDUSER ', type);
+
     var query = {}
     if (type == 'admin') {
         query = AdminAccess.find().populate({
@@ -100,43 +99,38 @@ async function loggedIn(req, res, next) {
         if (!roles || roles.length == 0) {
             return ERR404(req, res, next);
         }
-        console.log('queryResult', roles.length);
+
 
         for (var i = 0; i < roles.length; i++) {
             var item = roles[i];
-            //console.log('THISISROL', item)
+
 
             for (var j = 0; j < item.roles.length; j++) {
                 var jtem = item.roles[j];
                 if (jtem._id.toString() == role) {
-                    console.log('==compare==', jtem._id.toString(), role);
 
                     var metodsLS = item.method.split(',');
-                    console.log('==metod==', metodsLS, myMethod);
-                    if (metodsLS.includes(myMethod)) {
-                        console.log('==PTHS==', item.path, reqURL);
 
+                    if (metodsLS.includes(myMethod)) {
 
                         if (item.path.includes(':') && (myMethod == 'GET' || myMethod == 'PUT' || myMethod == 'DELETE')) {
 
-
-                            console.log('A');
                             if (reqURL.toLowerCase().trim().includes(item.path.split(':')[0].toLowerCase().trim())) {
-                                console.log('C');
+
                                 next();
                                 return 1;
                             }
                         } else if (reqURL.includes('?') && myMethod == 'GET') {
-                            console.log('PP');
+
                             if (reqURL.split('?')[0].toLowerCase().trim() == item.path.toLowerCase().trim()) {
-                                console.log('PPP');
+
                                 next();
                                 return 1;
                             }
                         } else {
-                            console.log('B');
+
                             if (item.path.toLowerCase().trim() == reqURL.toLowerCase().trim()) {
-                                console.log('D');
+
                                 next();
                                 return 1;
                             }
@@ -149,7 +143,7 @@ async function loggedIn(req, res, next) {
         }
 
 
-        console.log('BACKTOHOME')
+       
         return backToHome(req, res, next);
 
     }).catch(err => {

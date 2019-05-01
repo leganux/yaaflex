@@ -1,0 +1,180 @@
+{
+    "RECORDS": [
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc51e43a9a35731174388b1"
+            },
+            "description": "For all users default route access",
+            "method": "GET",
+            "path": "/",
+            "roles": [
+                {
+                    "$oid": "5cbb61d9d35f4b615e0b8f9a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc51e76a9a35731174388b2"
+            },
+            "description": "Acces to admin panel",
+            "method": "GET",
+            "path": "/lx_admin",
+            "roles": [
+                {
+                    "$oid": "5cbb61d9d35f4b615e0b8f9a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc52449ea24a534d008dc1c"
+            },
+            "description": "Acces to blog",
+            "method": "GET",
+            "path": "/blog",
+            "roles": [
+                {
+                    "$oid": "5cbb61d9d35f4b615e0b8f9a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc525493d5a6035a96daa0a"
+            },
+            "description": "To access all  dinamic pages",
+            "method": "GET",
+            "path": "/page/:name",
+            "roles": [
+                {
+                    "$oid": "5cbb61d9d35f4b615e0b8f9a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc52a85774c4b39c5617fe0"
+            },
+            "description": "access to all articles",
+            "method": "GET",
+            "path": "/article/:name",
+            "roles": [
+                {
+                    "$oid": "5cbb61d9d35f4b615e0b8f9a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc52c8b4a96003a9efad707"
+            },
+            "description": "Select All articles",
+            "method": "GET",
+            "path": "/api/article",
+            "roles": [
+                {
+                    "$oid": "5cbb61d9d35f4b615e0b8f9a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc52fb0adc7623b05c5d1cb"
+            },
+            "description": "acces to auth",
+            "method": "POST,GET,PUT,DELETE",
+            "path": "/auth/:algo",
+            "roles": [
+                {
+                    "$oid": "5cbb61d9d35f4b615e0b8f9a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc8e38f179de52c4a574a6b"
+            },
+            "description": "Chat room acces site",
+            "method": "GET",
+            "path": "/chat",
+            "roles": [
+                {
+                    "$oid": "5cbb61d9d35f4b615e0b8f9a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc8f72b667cca34b230e361"
+            },
+            "description": "socket",
+            "method": "POST,GET,PUT,DELETE",
+            "path": "/socket.io/:",
+            "roles": [
+                {
+                    "$oid": "5cbb61d9d35f4b615e0b8f9a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc8f744667cca34b230e362"
+            },
+            "description": "socket",
+            "method": "POST,GET,PUT,DELETE",
+            "path": "/socket.io",
+            "roles": [
+                {
+                    "$oid": "5cbb61d9d35f4b615e0b8f9a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc8f770667cca34b230e363"
+            },
+            "description": "socket",
+            "method": "POST,GET,PUT,DELETE",
+            "path": "/socket.io/",
+            "roles": [
+                {
+                    "$oid": "5cbb61d9d35f4b615e0b8f9a"
+                }
+            ]
+        }
+    ]
+}

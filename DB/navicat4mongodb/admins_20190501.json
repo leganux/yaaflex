@@ -1,0 +1,20 @@
+{
+    "RECORDS": [
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cbb5607fb643b59be887703"
+            },
+            "active": false,
+            "dt_reg": "20/4/2019 17:25:10",
+            "email": "erickcruz@leganux.com",
+            "password": "$2y$12$coKRM8TS/W41KajOO8YJi.5iWJwilujpMB7hU8Pa9QtJL/U32Za0i",
+            "role": {
+                "$oid": "5cba9d07c9bef54bb60d2e0a"
+            },
+            "username": "admin"
+        }
+    ]
+}

@@ -1,0 +1,1 @@
+{"_id":{"$oid":"5cbb61d9d35f4b615e0b8f9a"},"active":true,"name":"Deafult","description":"a default role for users","dt_reg":{"$date":1555784005000},"__v":0}

@@ -9,56 +9,16 @@ nav.navbar.navbar-default.navbar-static-top(role='navigation', style='margin-bot
 
     .navbar-default.sidebar(role='navigation')
         .sidebar-nav.navbar-collapse
-            ul#side-menu.nav     
-                li
-                    a(href='/lx_admin/dashboard')
-                        i.fas.fa-tachometer-alt.fa-fw
-                        |  #{i18n.admin_menu_dashboard}
 
-               
-                li
-                    a(href='/lx_admin/roles_admin')
-                        i.fas.fa-key.fa-fw
-                        |   #{i18n.admin_menu_admin_roles}
+            ul#side-menu.nav  
+                if config && config.menu
+                    each val in config.menu
+                        li
+                            a(href=val.path)
+                                i(class=val.icon)
+                                |   #{val.txt}
 
-                
 
-                li
-                    a(href='/lx_admin/administradores')
-                        i.fas.fa-user-cog.fa-fw
-                        |   #{i18n.admin_menu_admins}
-                
-                li
-                    a(href='/lx_admin/roles_user')
-                        i.fas.fa-users-cog.fa-fw
-                        |   #{i18n.admin_menu_user_roles}
-                li
-                    a(href='/lx_admin/users')
-                        i.fa.fa-user.fa-fw
-                        |   #{i18n.admin_menu_users}
-                li
-                    a(href='/lx_admin/routes_access')
-                        i.fas.fa-route.fa-fw
-                        |   #{i18n.admin_menu_routes_access_admin} 
-                li
-                    a(href='/lx_admin/routes_access_user')
-                        i.fas.fa-route.fa-fw
-                        |   #{i18n.admin_menu_routes_access_users} 
-                li
-                    a(href='/lx_admin/file_manager')
-                        i.fas.fa-folder-open.fa-fw
-                        |    #{i18n.admin_menu_file_manager}
-                li
-                    a(href='/lx_admin/articles')
-                        i.fas.fa-blog.fa-fw
-                        |    #{i18n.admin_menu_articles}
-                li
-                    a(href='/lx_admin/dinamic_pages')
-                        i.fas.fa-globe-americas.fa-fw
-                        |    #{i18n.admin_menu_dinamic_pages}
 
-                li
-                    a(href='/logout')
-                        i.fas.fa-sign-out-alt.fa-fw
-                        |    #{i18n.admin_menu_logout}
+
 

@@ -37,6 +37,7 @@ passport.use('admin-login', new LocalStrategy({
 
 router.post('/', passport.authenticate('admin-login', { failureRedirect: '/lx_admin', failWithError: true }),
     function (req, res) {
+        
         res.redirect('/lx_admin/dashboard');
     });
 

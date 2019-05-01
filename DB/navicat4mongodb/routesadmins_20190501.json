@@ -1,0 +1,733 @@
+{
+    "RECORDS": [
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc52ed2adc7623b05c5d1c8"
+            },
+            "description": "Access to website ",
+            "method": "GET",
+            "path": "/",
+            "roles": [
+                {
+                    "$oid": "5cba9d07c9bef54bb60d2e0a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc52f33adc7623b05c5d1c9"
+            },
+            "description": "Acces to admin panel",
+            "method": "GET",
+            "path": "/lx_admin",
+            "roles": [
+                {
+                    "$oid": "5cba9d07c9bef54bb60d2e0a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc52f47adc7623b05c5d1ca"
+            },
+            "description": "Acces to blog",
+            "method": "GET",
+            "path": "/blog",
+            "roles": [
+                {
+                    "$oid": "5cba9d07c9bef54bb60d2e0a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc52fd5adc7623b05c5d1cc"
+            },
+            "description": "access to autentification",
+            "method": "POST,GET,PUT,DELETE",
+            "path": "/auth/:algo",
+            "roles": [
+                {
+                    "$oid": "5cba9d07c9bef54bb60d2e0a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc5300dadc7623b05c5d1cd"
+            },
+            "description": "Acces to articles",
+            "method": "GET",
+            "path": "/article/:name",
+            "roles": [
+                {
+                    "$oid": "5cba9d07c9bef54bb60d2e0a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc53037adc7623b05c5d1ce"
+            },
+            "description": "Get articles JSON",
+            "method": "GET",
+            "path": "/api/article",
+            "roles": [
+                {
+                    "$oid": "5cba9d07c9bef54bb60d2e0a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc53057adc7623b05c5d1cf"
+            },
+            "description": "Dinamic pages",
+            "method": "GET",
+            "path": "/page/:name",
+            "roles": [
+                {
+                    "$oid": "5cba9d07c9bef54bb60d2e0a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc53093adc7623b05c5d1d0"
+            },
+            "description": "Acces to dashboard",
+            "method": "GET",
+            "path": "/lx_admin/dashboard",
+            "roles": [
+                {
+                    "$oid": "5cba9d07c9bef54bb60d2e0a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc53163e579473c9cb637da"
+            },
+            "description": "Acces to admin roles",
+            "method": "GET",
+            "path": "/lx_admin/roles_admin",
+            "roles": [
+                {
+                    "$oid": "5cba9d07c9bef54bb60d2e0a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc5318de579473c9cb637db"
+            },
+            "description": "Admin roles API",
+            "method": "POST,GET,PUT,DELETE",
+            "path": "/api/admin_roles",
+            "roles": [
+                {
+                    "$oid": "5cba9d07c9bef54bb60d2e0a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc531bae579473c9cb637dc"
+            },
+            "description": "Admin roles Edit and Delete",
+            "method": "POST,GET,PUT,DELETE",
+            "path": "/api/admin_roles/:id",
+            "roles": [
+                {
+                    "$oid": "5cba9d07c9bef54bb60d2e0a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc53217e579473c9cb637dd"
+            },
+            "description": "Acces to admin",
+            "method": "GET",
+            "path": "/lx_admin/administradores",
+            "roles": [
+                {
+                    "$oid": "5cba9d07c9bef54bb60d2e0a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc53256e579473c9cb637de"
+            },
+            "description": "Access to Admin API",
+            "method": "POST,GET,PUT,DELETE",
+            "path": "/api/admin/:id",
+            "roles": [
+                {
+                    "$oid": "5cba9d07c9bef54bb60d2e0a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc53451a0fb8c3ce6d523a3"
+            },
+            "description": "acces to admin api",
+            "method": "POST,GET",
+            "path": "/api/admin",
+            "roles": [
+                {
+                    "$oid": "5cba9d07c9bef54bb60d2e0a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc73e658ab66304ccaa728e"
+            },
+            "description": "access to dinamic page",
+            "method": "POST,GET",
+            "path": "/api/dPage/:name",
+            "roles": [
+                {
+                    "$oid": "5cba9d07c9bef54bb60d2e0a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc73e868ab66304ccaa728f"
+            },
+            "description": "Acces to dinamic pages api",
+            "method": "GET,PUT,DELETE",
+            "path": "/api/dPage",
+            "roles": [
+                {
+                    "$oid": "5cba9d07c9bef54bb60d2e0a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc73f208ab66304ccaa7290"
+            },
+            "description": "acces to routes api",
+            "method": "GET,PUT,DELETE",
+            "path": "/api/article/:name",
+            "roles": [
+                {
+                    "$oid": "5cba9d07c9bef54bb60d2e0a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc73f6d8ab66304ccaa7291"
+            },
+            "description": "Acces api articles",
+            "method": "POST,GET",
+            "path": "/api/article",
+            "roles": [
+                {
+                    "$oid": "5cba9d07c9bef54bb60d2e0a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc73fbe8ab66304ccaa7292"
+            },
+            "description": "file admin api",
+            "method": "POST,GET",
+            "path": "/api/file_admin",
+            "roles": [
+                {
+                    "$oid": "5cba9d07c9bef54bb60d2e0a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc73fda8ab66304ccaa7293"
+            },
+            "description": "File admin API",
+            "method": "POST,GET,PUT",
+            "path": "/api/file_admin/:d",
+            "roles": [
+                {
+                    "$oid": "5cba9d07c9bef54bb60d2e0a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc740158ab66304ccaa7294"
+            },
+            "description": "Admin routes API",
+            "method": "GET,PUT,DELETE",
+            "path": "/api/admin_routes/:id",
+            "roles": [
+                {
+                    "$oid": "5cba9d07c9bef54bb60d2e0a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc740298ab66304ccaa7295"
+            },
+            "description": "API admin routes\n",
+            "method": "POST,GET",
+            "path": "/api/admin_routes",
+            "roles": [
+                {
+                    "$oid": "5cba9d07c9bef54bb60d2e0a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc740a58ab66304ccaa7296"
+            },
+            "description": "Acces to API uswr rouytes",
+            "method": "POST,GET",
+            "path": "/api/user_routes",
+            "roles": [
+                {
+                    "$oid": "5cba9d07c9bef54bb60d2e0a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc740ea8ab66304ccaa7297"
+            },
+            "description": "API routes",
+            "method": "GET,PUT,DELETE",
+            "path": "/api/user_routes/:id",
+            "roles": [
+                {
+                    "$oid": "5cba9d07c9bef54bb60d2e0a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc741508ab66304ccaa7298"
+            },
+            "description": "i18n rouets selector calaogue",
+            "method": "POST,GET",
+            "path": "/api/i18n",
+            "roles": [
+                {
+                    "$oid": "5cba9d07c9bef54bb60d2e0a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc741838ab66304ccaa7299"
+            },
+            "description": "i18n API",
+            "method": "GET,PUT,DELETE",
+            "path": "/api/i18n/:id",
+            "roles": [
+                {
+                    "$oid": "5cba9d07c9bef54bb60d2e0a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc741f38ab66304ccaa729a"
+            },
+            "description": "api country",
+            "method": "GET",
+            "path": "/api/country",
+            "roles": [
+                {
+                    "$oid": "5cba9d07c9bef54bb60d2e0a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc742058ab66304ccaa729b"
+            },
+            "description": "cities",
+            "method": "GET",
+            "path": "/api/city",
+            "roles": [
+                {
+                    "$oid": "5cba9d07c9bef54bb60d2e0a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc742558ab66304ccaa729c"
+            },
+            "description": "State catalogue",
+            "method": "GET",
+            "path": "/api/state",
+            "roles": [
+                {
+                    "$oid": "5cba9d07c9bef54bb60d2e0a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc754208ab66304ccaa729d"
+            },
+            "description": "API user",
+            "method": "POST,GET",
+            "path": "/api/user",
+            "roles": [
+                {
+                    "$oid": "5cba9d07c9bef54bb60d2e0a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc7543b8ab66304ccaa729e"
+            },
+            "description": "Api user ",
+            "method": "GET,PUT,DELETE",
+            "path": "/api/user/:",
+            "roles": [
+                {
+                    "$oid": "5cba9d07c9bef54bb60d2e0a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc7548e8ab66304ccaa729f"
+            },
+            "description": "Api user",
+            "method": "GET,PUT,DELETE",
+            "path": "/api/user_roles/:id",
+            "roles": [
+                {
+                    "$oid": "5cba9d07c9bef54bb60d2e0a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc754a38ab66304ccaa72a0"
+            },
+            "description": "/api/user_roles",
+            "method": "POST,GET",
+            "path": "/api/user_roles",
+            "roles": [
+                {
+                    "$oid": "5cba9d07c9bef54bb60d2e0a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc755278ab66304ccaa72a1"
+            },
+            "description": "screen  user roles",
+            "method": "GET",
+            "path": "/lx_admin/roles_user",
+            "roles": [
+                {
+                    "$oid": "5cba9d07c9bef54bb60d2e0a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc755538ab66304ccaa72a2"
+            },
+            "description": "screen users",
+            "method": "GET",
+            "path": "/lx_admin/users",
+            "roles": [
+                {
+                    "$oid": "5cba9d07c9bef54bb60d2e0a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc755ca8ab66304ccaa72a3"
+            },
+            "description": "Screen routes access",
+            "method": "GET",
+            "path": "/lx_admin/routes_access",
+            "roles": [
+                {
+                    "$oid": "5cba9d07c9bef54bb60d2e0a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc755ff8ab66304ccaa72a4"
+            },
+            "description": "Screen routes user",
+            "method": "GET",
+            "path": "/lx_admin/routes_access_user",
+            "roles": [
+                {
+                    "$oid": "5cba9d07c9bef54bb60d2e0a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc756388ab66304ccaa72a5"
+            },
+            "description": "File manager screen",
+            "method": "GET",
+            "path": "/lx_admin/file_manager",
+            "roles": [
+                {
+                    "$oid": "5cba9d07c9bef54bb60d2e0a"
+                },
+                {
+                    "$oid": "5cbb4f385b7f7152f9208069"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc756648ab66304ccaa72a6"
+            },
+            "description": "Blog articles screen ",
+            "method": "GET",
+            "path": "/lx_admin/articles",
+            "roles": [
+                {
+                    "$oid": "5cba9d07c9bef54bb60d2e0a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc756948ab66304ccaa72a7"
+            },
+            "description": "Screen dinamic",
+            "method": "GET",
+            "path": "/lx_admin/dinamic_pages",
+            "roles": [
+                {
+                    "$oid": "5cba9d07c9bef54bb60d2e0a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc8dfaaa7f1d32bfa761cab"
+            },
+            "description": "Exit Zero",
+            "method": "GET",
+            "path": "/logout",
+            "roles": [
+                {
+                    "$oid": "5cba9d07c9bef54bb60d2e0a"
+                },
+                {
+                    "$oid": "5cbb4f385b7f7152f9208069"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc8e378179de52c4a574a6a"
+            },
+            "description": "chat access site",
+            "method": "GET",
+            "path": "/chat",
+            "roles": [
+                {
+                    "$oid": "5cba9d07c9bef54bb60d2e0a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc8f6fe667cca34b230e35f"
+            },
+            "description": "allow socket",
+            "method": "POST,GET,PUT,DELETE",
+            "path": "/socket.io/:",
+            "roles": [
+                {
+                    "$oid": "5cba9d07c9bef54bb60d2e0a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc8f716667cca34b230e360"
+            },
+            "description": "socket",
+            "method": "POST,GET,PUT,DELETE",
+            "path": "/socket.io",
+            "roles": [
+                {
+                    "$oid": "5cba9d07c9bef54bb60d2e0a"
+                }
+            ]
+        },
+        {
+            "__v": {
+                "$numberInt": "0"
+            },
+            "_id": {
+                "$oid": "5cc8f793667cca34b230e364"
+            },
+            "description": "socket",
+            "method": "POST,GET,PUT,DELETE",
+            "path": "/socket.io/",
+            "roles": [
+                {
+                    "$oid": "5cba9d07c9bef54bb60d2e0a"
+                },
+                {
+                    "$oid": "5cbb4f385b7f7152f9208069"
+                }
+            ]
+        }
+    ]
+}

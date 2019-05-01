@@ -1,0 +1,2 @@
+{"_id":{"$oid":"5cba9d07c9bef54bb60d2e0a"},"active":true,"name":"Super","description":"Super Administrator Roles","dt_reg":{"$date":1555733760000},"__v":0}
+{"_id":{"$oid":"5cbb4f385b7f7152f9208069"},"active":true,"name":"Content","description":"will be the admin for content in the webpage","dt_reg":{"$date":1555779321000},"__v":0}
