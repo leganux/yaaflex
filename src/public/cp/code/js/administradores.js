@@ -64,7 +64,7 @@ $(document).ready(function () {
         UPDATE = $(this).val();
         HoldOn.open(HoldOptions);
         $.ajax({
-            url: "/api/admin/" + UPDATE,
+            url: rootPath +"/api/admin/" + UPDATE,
         }).done(function (data) {
             HoldOn.close();
             if (data.success == true) {
@@ -88,7 +88,7 @@ $(document).ready(function () {
         alertify.confirm(lx_i18n.txt_fonfirm_delete, lx_i18n.txt_fonfirm_delete_question, function () {
             HoldOn.open(HoldOptions);
             $.ajax({
-                url: "/api/admin/" + DELETE,
+                url: rootPath +"/api/admin/" + DELETE,
                 method: "DELETE"
             }).done(function (data) {
                 HoldOn.close();
@@ -110,7 +110,7 @@ $(document).ready(function () {
         DT.clear().draw();
         HoldOn.open(HoldOptions);
         $.ajax({
-            url: "/api/admin",
+            url:rootPath + "/api/admin",
         }).done(function (data) {
 
             HoldOn.close();
@@ -136,7 +136,7 @@ $(document).ready(function () {
                 active: $('#txt_active').val(),
                 role: $('#txt_role').val(),
             }
-            var url = "/api/admin";
+            var url = rootPath +"/api/admin";
             var method = 'POST';
             if (UPDATE !== '') {
                 url = url + '/' + UPDATE;
@@ -170,7 +170,7 @@ $(document).ready(function () {
 
         $('#txt_role').html('');
         HoldOn.open(HoldOptions);
-        $.getJSON('/api/admin_roles', {
+        $.getJSON(rootPath +'/api/admin_roles', {
             strictsearch: {
                 active: true
             },

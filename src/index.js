@@ -21,6 +21,7 @@ const env = require('./config/environment.config')
 const ssl_routes = require('./config/ssl_routes.config')
 const global = require('./config/global.config')
 
+
 /** FRWK VARS */
 var privateKey = {}
 var certificate = {}
@@ -88,12 +89,12 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 /** login routes */
-app.use('/auth/facebook', require('./auth/facebook'));
-app.use('/auth/twitter', require('./auth/twitter'));
-app.use('/auth/google', require('./auth/google'));
-app.use('/auth/instagram', require('./auth/instagram'));
-app.use('/auth/admin', require('./auth/admin'));
-app.use('/auth/login', require('./auth/login'));
+app.use(env.root + '/auth/facebook', require('./auth/facebook'));
+app.use(env.root + '/auth/twitter', require('./auth/twitter'));
+app.use(env.root + '/auth/google', require('./auth/google'));
+app.use(env.root + '/auth/instagram', require('./auth/instagram'));
+app.use(env.root + '/auth/admin', require('./auth/admin'));
+app.use(env.root + '/auth/login', require('./auth/login'));
 
 // Db connection
 const { mongoose } = require('./database');
@@ -136,20 +137,20 @@ if (env.environment == 'development' || env.environment == 'qa') {
 app.use(express.json());
 
 //Backoffice and Frontend Routes Control
-app.use('/lx_admin', require('./viewEngine/backoffice'));
-app.use('/', require('./viewEngine/frontend'));
-app.use('/upload', require('./viewEngine/upload'));
+app.use(env.root + '/lx_admin', require('./viewEngine/backoffice'));
+app.use(env.root + '/', require('./viewEngine/frontend'));
+app.use(env.root + '/upload', require('./viewEngine/upload'));
 
 //Helpers
-app.use('/', require('./helpers/lets_encrypt.helper'));
-app.use('/robots.txt', require('./helpers/robots_txt.helper'));
-app.use('/', require('./helpers/logout.helper'));
+app.use(env.root + '/', require('./helpers/lets_encrypt.helper'));
+app.use(env.root + '/robots.txt', require('./helpers/robots_txt.helper'));
+app.use(env.root + '/', require('./helpers/logout.helper'));
 
 /** API Routes */
-app.use('/api', require('./routes/_api.routes'));
+app.use(env.root + '/api', require('./routes/_api.routes'));
 
 // Static Files
-app.use('/cdn/assets', express.static(path.join(__dirname, 'public')));
+app.use(env.root + '/cdn/assets', express.static(path.join(__dirname, 'public')));
 
 //views
 app.set("views", path.join(__dirname, "views"));
@@ -167,7 +168,7 @@ var chat = io
     chat.emit('chat:message', 'hi');
     socket.on('chat:message', function (msg) {
       console.log('mensaje' + msg)
-      chat.emit('chat:message', msg );
+      chat.emit('chat:message', msg);
     });
     socket.on('disconnect', function () {
       console.log('user disconnected');

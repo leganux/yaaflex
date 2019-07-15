@@ -5,6 +5,7 @@ var Strategy = require('passport-twitter').Strategy;
 let twConfig = require('./../config/twitter.config');
 const User = require('./../models/user.model');
 const moment = require('moment');
+const env =require('./../config/environment.config')
 
 
 passport.use(new Strategy({
@@ -58,9 +59,9 @@ router.get('/', passport.authenticate('twitter'));
 
 
 router.get('/callback/',
-    passport.authenticate('twitter', { failureRedirect: '/loginError', failWithError: true }),
+    passport.authenticate('twitter', { failureRedirect: env.root + '/loginError', failWithError: true }),
     function (req, res) {
-        res.redirect('/');
+        res.redirect(env.root + '/');
     });
 
 

@@ -5,7 +5,7 @@ var Strategy = require('passport-instagram').Strategy;
 const User = require('./../models/user.model');
 const moment = require('moment');
 let instaConfig = require('./../config/instagram.config');
-
+const env =require('./../config/environment.config')
 
 passport.use(new Strategy({
     clientID: instaConfig.instagram_api_key,
@@ -64,9 +64,9 @@ router.get('/', passport.authenticate('instagram', { scope: instaConfig.scope_pe
 
 
 router.get('/callback/',
-    passport.authenticate('instagram', { failureRedirect: '/loginError', failWithError: true }),
+    passport.authenticate('instagram', { failureRedirect: env.root +'/loginError', failWithError: true }),
     function (req, res) {
-        res.redirect('/');
+        res.redirect(env.root +'/');
     });
 
 

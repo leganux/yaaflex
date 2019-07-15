@@ -102,7 +102,7 @@ $(document).ready(function () {
         var ch = $(this).prop('checked');
 
         $.ajax({
-            url: '/api/article/' + X,
+            url:rootPath + '/api/article/' + X,
             method: 'PUT',
             data: { active: ch }
         }).done(function (data) {
@@ -120,7 +120,7 @@ $(document).ready(function () {
         UPDATE = $(this).val();
         HoldOn.open(HoldOptions);
         $.ajax({
-            url: "/api/article/" + UPDATE,
+            url:rootPath + "/api/article/" + UPDATE,
         }).done(function (data) {
             HoldOn.close();
             if (data.success == true) {
@@ -146,7 +146,7 @@ $(document).ready(function () {
         alertify.confirm(lx_i18n.txt_fonfirm_delete, lx_i18n.txt_fonfirm_delete_question, function () {
             HoldOn.open(HoldOptions);
             $.ajax({
-                url: "/api/article/" + DELETE,
+                url: rootPath +"/api/article/" + DELETE,
                 method: "DELETE"
             }).done(function (data) {
                 HoldOn.close();
@@ -168,7 +168,7 @@ $(document).ready(function () {
         DT.clear().draw();
         HoldOn.open(HoldOptions);
         $.ajax({
-            url: "/api/article",
+            url:rootPath + "/api/article",
         }).done(function (data) {
 
             HoldOn.close();
@@ -195,7 +195,7 @@ $(document).ready(function () {
                 tags: $('#txt_tags').val(),
                 html: $('#summernote').summernote('code'),
             }
-            var url = "/api/article";
+            var url =rootPath + "/api/article";
             var method = 'POST';
             if (UPDATE !== '') {
                 url = url + '/' + UPDATE;
@@ -250,7 +250,7 @@ $(document).ready(function () {
         var data = new FormData();
         data.append('articleThumbnail', $('#txt_thumbnail')[0].files[0]);
         $.ajax({
-            url: '/upload',
+            url:rootPath + '/upload',
             data: data,
             contentType: false,
             processData: false,

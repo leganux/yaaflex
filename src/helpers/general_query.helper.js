@@ -8,7 +8,7 @@ module.exports = function (router, OBJModel, _Population, CheckSession, _Special
 
     // GET one  Object find
     router.get('/find/', CheckSession, async (req, res) => {
-        const { strictsearch, avoid } = req.query;
+        const { strictsearch, avoid, select } = req.query;
 
         let busqueda = {};
         if (strictsearch) {
@@ -35,6 +35,9 @@ module.exports = function (router, OBJModel, _Population, CheckSession, _Special
             _Population.map(function (item, i, arr) {
                 query.populate(item)
             });
+        }
+        if (select) {
+            query.select(select);
         }
 
         await query.exec((err, data) => {
@@ -63,7 +66,7 @@ module.exports = function (router, OBJModel, _Population, CheckSession, _Special
 
     // GET all Objects
     router.get('/', CheckSession, async (req, res) => {
-        const { sort, search, paginate, strictsearch, avoid, like } = req.query;
+        const { sort, search, paginate, strictsearch, avoid, like, select } = req.query;
         let order = {};
         let busqueda = {};
         let andS = []
@@ -118,6 +121,9 @@ module.exports = function (router, OBJModel, _Population, CheckSession, _Special
 
         if (like) {
             query.or(andS)
+        }
+        if (select) {
+            query.select(select);
         }
 
         if (paginate && paginate.limit && (paginate.page || Number(paginate.page === 0))) {

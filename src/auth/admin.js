@@ -4,6 +4,8 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 const Admin = require('../models/admin');
 const bcrypt = require('bcryptjs');
+const env = require('./../config/environment.config');
+
 
 
 passport.use('admin-login', new LocalStrategy({
@@ -35,10 +37,10 @@ passport.use('admin-login', new LocalStrategy({
 ));
 
 
-router.post('/', passport.authenticate('admin-login', { failureRedirect: '/lx_admin', failWithError: true }),
+router.post('/', passport.authenticate('admin-login', { failureRedirect: env.root + '/lx_admin', failWithError: true }),
     function (req, res) {
-        
-        res.redirect('/lx_admin/dashboard');
+
+        res.redirect(env.root + '/lx_admin/dashboard');
     });
 
 

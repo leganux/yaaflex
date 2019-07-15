@@ -52,7 +52,7 @@ $(document).ready(function () {
         ]
     });
 
-    $.getJSON('/api/user_roles', {}, function (data) {
+    $.getJSON(rootPath +'/api/user_roles', {}, function (data) {
         if (data.success) {
             $.each(data.data, function (i, item) {
                 $('#txt_roles').append('<option value="' + item._id + '">' + item.name + '</option>')
@@ -82,7 +82,7 @@ $(document).ready(function () {
         UPDATE = $(this).val();
         HoldOn.open(HoldOptions);
         $.ajax({
-            url: "/api/user_routes/" + UPDATE,
+            url:rootPath + "/api/user_routes/" + UPDATE,
         }).done(function (data) {
             HoldOn.close();
             if (data.success == true) {
@@ -112,7 +112,7 @@ $(document).ready(function () {
         alertify.confirm(lx_i18n.txt_fonfirm_delete, lx_i18n.txt_fonfirm_delete_question, function () {
             HoldOn.open(HoldOptions);
             $.ajax({
-                url: "/api/user_routes/" + DELETE,
+                url: rootPath +"/api/user_routes/" + DELETE,
                 method: "DELETE"
             }).done(function (data) {
                 HoldOn.close();
@@ -133,7 +133,7 @@ $(document).ready(function () {
         DT.clear().draw();
         HoldOn.open(HoldOptions);
         $.ajax({
-            url: "/api/user_routes",
+            url:rootPath + "/api/user_routes",
         }).done(function (data) {
 
             HoldOn.close();
@@ -170,7 +170,7 @@ $(document).ready(function () {
                 method: method.join(','),
                 roles: roles,
             }
-            var url = "/api/user_routes";
+            var url = rootPath +"/api/user_routes";
             var method = 'POST';
             if (UPDATE !== '') {
                 url = url + '/' + UPDATE;

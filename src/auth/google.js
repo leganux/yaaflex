@@ -5,6 +5,7 @@ var Strategy = require('passport-google-oauth').OAuth2Strategy;
 let gooConfig = require('./../config/google.config');
 const User = require('./../models/user.model');
 const moment = require('moment');
+const env =require('./../config/environment.config')
 
 
 passport.use(new Strategy({
@@ -57,9 +58,9 @@ router.get('/', passport.authenticate('google', { scope: gooConfig.scope_permiss
 
 
 router.get('/callback/',
-    passport.authenticate('google', { failureRedirect: '/loginError', failWithError: true }),
+    passport.authenticate('google', { failureRedirect: env.root + '/loginError', failWithError: true }),
     function (req, res) {
-        res.redirect('/');
+        res.redirect(env.root + '/');
     });
 
 

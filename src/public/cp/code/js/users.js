@@ -174,7 +174,7 @@ $(document).ready(function () {
         UPDATE = $(this).val();
         HoldOn.open(HoldOptions);
         $.ajax({
-            url: "/api/user/" + UPDATE,
+            url:rootPath + "/api/user/" + UPDATE,
         }).done(function (data) {
             HoldOn.close();
             if (data.success == true) {
@@ -198,7 +198,7 @@ $(document).ready(function () {
                 var SX = data;
 
                 if (SX.country && SX.country !== '') {
-                    $.getJSON('/api/state', {
+                    $.getJSON(rootPath +'/api/state', {
                         strictsearch: {
                             country_id: SX.country
                         }
@@ -209,7 +209,7 @@ $(document).ready(function () {
                             });
                             $('#txt_state').val(SX.state)
 
-                            $.getJSON('/api/city', {
+                            $.getJSON(rootPath +'/api/city', {
                                 strictsearch: {
                                     state_id: SX.state
                                 }
@@ -249,7 +249,7 @@ $(document).ready(function () {
         alertify.confirm(lx_i18n.txt_fonfirm_delete, lx_i18n.txt_fonfirm_delete_question, function () {
             HoldOn.open(HoldOptions);
             $.ajax({
-                url: "/api/user/" + DELETE,
+                url:rootPath + "/api/user/" + DELETE,
                 method: "DELETE"
             }).done(function (data) {
                 HoldOn.close();
@@ -271,7 +271,7 @@ $(document).ready(function () {
         var ch = $(this).prop('checked');
 
         $.ajax({
-            url: '/api/user/' + X,
+            url:rootPath + '/api/user/' + X,
             method: 'PUT',
             data: { active: ch }
         }).done(function (data) {
@@ -289,7 +289,7 @@ $(document).ready(function () {
         DT.clear().draw();
         HoldOn.open(HoldOptions);
         $.ajax({
-            url: "/api/user",
+            url:rootPath + "/api/user",
         }).done(function (data) {
 
             HoldOn.close();
@@ -326,7 +326,7 @@ $(document).ready(function () {
                 zip_code: $('#txt_zipcode').val(),
                 user_picture: $('#txt_image_save').val(),
             }
-            var url = "/api/user";
+            var url =rootPath + "/api/user";
             var method = 'POST';
             if (UPDATE !== '') {
                 url = url + '/' + UPDATE;
@@ -361,7 +361,7 @@ $(document).ready(function () {
         //role catalogue
         $('#txt_role').html('');
         HoldOn.open(HoldOptions);
-        $.getJSON('/api/user_roles', {
+        $.getJSON(rootPath +'/api/user_roles', {
             strictsearch: {
                 active: true
             },
@@ -386,7 +386,7 @@ $(document).ready(function () {
         //lang catalog
         $('#txt_lang').html('');
         HoldOn.open(HoldOptions);
-        $.getJSON('/api/i18n', {
+        $.getJSON(rootPath +'/api/i18n', {
             //strictsearch: {},
             //sort: {},
             //avoid:{},
@@ -407,7 +407,7 @@ $(document).ready(function () {
         //Country catalog
         $('#txt_country').html('');
         HoldOn.open(HoldOptions);
-        $.getJSON('/api/country', {
+        $.getJSON(rootPath +'/api/country', {
             //strictsearch: {},
             //sort: {},
             //avoid:{},
@@ -434,7 +434,7 @@ $(document).ready(function () {
         var val = $(this).val();
         $('#txt_state').html('');
         HoldOn.open(HoldOptions);
-        $.getJSON('/api/state', {
+        $.getJSON(rootPath +'/api/state', {
             strictsearch: {
                 country_id: val
             }
@@ -457,7 +457,7 @@ $(document).ready(function () {
         var val = $(this).val();
         $('#txt_city').html('');
         HoldOn.open(HoldOptions);
-        $.getJSON('/api/city', {
+        $.getJSON(rootPath +'/api/city', {
             strictsearch: {
                 state_id: val.toString()
             }
@@ -486,7 +486,7 @@ $(document).ready(function () {
         data.append('Image', $('#txt_image')[0].files[0]);
         data.append('collection', 'image');
         $.ajax({
-            url: '/upload',
+            url: rootPath +'/upload',
             data: data,
             contentType: false,
             processData: false,

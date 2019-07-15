@@ -5,6 +5,7 @@ var Strategy = require('passport-facebook').Strategy;
 let fbconfig = require('./../config/facebook.config');
 const User = require('./../models/user.model');
 const moment = require('moment');
+const env =require('./../config/environment.config')
 
 
 
@@ -61,9 +62,9 @@ passport.use(new Strategy({
 router.get('/', passport.authenticate('facebook', { scope: fbconfig.scope_permission }));
 
 
-router.get('/callback/', passport.authenticate('facebook', { failureRedirect: '/loginError', failWithError: true }),
+router.get('/callback/', passport.authenticate('facebook', { failureRedirect: env.root + '/loginError', failWithError: true }),
     function (req, res) {
-        res.redirect('/');
+        res.redirect(env.root + '/');
     });
 
 

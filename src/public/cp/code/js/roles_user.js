@@ -38,7 +38,7 @@ $(document).ready(function () {
         UPDATE = $(this).val();
         HoldOn.open(HoldOptions);
         $.ajax({
-            url: "/api/user_roles/" + UPDATE,
+            url:rootPath + "/api/user_roles/" + UPDATE,
         }).done(function (data) {
             HoldOn.close();
             if (data.success == true) {
@@ -59,7 +59,7 @@ $(document).ready(function () {
         alertify.confirm(lx_i18n.txt_fonfirm_delete, lx_i18n.txt_fonfirm_delete_question, function () {
             HoldOn.open(HoldOptions);
             $.ajax({
-                url: "/api/user_roles/" + DELETE,
+                url:rootPath + "/api/user_roles/" + DELETE,
                 method: "DELETE"
             }).done(function (data) {
                 HoldOn.close();
@@ -80,7 +80,7 @@ $(document).ready(function () {
         DT.clear().draw();
         HoldOn.open(HoldOptions);
         $.ajax({
-            url: "/api/user_roles",
+            url:rootPath + "/api/user_roles",
         }).done(function (data) {
 
             HoldOn.close();
@@ -103,7 +103,7 @@ $(document).ready(function () {
                 description: $('#txt_description').val(),
                 active: true,
             }
-            var url = "/api/user_roles";
+            var url =rootPath + "/api/user_roles";
             var method = 'POST';
             if (UPDATE !== '') {
                 url = url + '/' + UPDATE;

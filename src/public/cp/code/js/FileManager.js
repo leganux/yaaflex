@@ -76,7 +76,7 @@ $(document).ready(function () {
         alertify.confirm(lx_i18n.txt_fonfirm_delete, lx_i18n.txt_fonfirm_delete_question, function () {
             HoldOn.open(HoldOptions);
             $.ajax({
-                url: "/api/file_admin/FP/" + DELETE,
+                url:rootPath + "/api/file_admin/FP/" + DELETE,
                 method: "DELETE",
                 data: { path: PATH }
             }).done(function (data) {
@@ -98,7 +98,7 @@ $(document).ready(function () {
         DT.clear().draw();
         HoldOn.open(HoldOptions);
         $.ajax({
-            url: "/api/file_admin",
+            url:rootPath + "/api/file_admin",
         }).done(function (data) {
 
             HoldOn.close();
@@ -128,7 +128,7 @@ $(document).ready(function () {
         var data = new FormData();
         data.append('File', $('#txt_file')[0].files[0]);
         $.ajax({
-            url: '/upload',
+            url:rootPath + '/upload',
             data: data,
             contentType: false,
             processData: false,

@@ -5,6 +5,7 @@ var LocalStrategy = require('passport-local').Strategy;
 const Admin = require('../models/admin');
 const User = require('../models/user.model');
 const bcrypt = require('bcryptjs');
+const env =require('./../config/environment.config')
 
 
 passport.use(new LocalStrategy({
@@ -30,9 +31,9 @@ passport.use(new LocalStrategy({
 ));
 
 
-router.post('/', passport.authenticate('local', { failureRedirect: '/', failWithError: true }),
+router.post('/', passport.authenticate('local', { failureRedirect: env.root +'/', failWithError: true }),
     function (req, res) {
-        res.redirect('/');
+        res.redirect(env.root +'/');
     });
 
 

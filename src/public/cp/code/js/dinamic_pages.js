@@ -111,7 +111,7 @@ $(document).ready(function () {
             alertify.error(lx_i18n.txt_txt_an_error_occured);
             return 0;
         }
-        var url = "/api/dPage";
+        var url =rootPath + "/api/dPage";
         url = url + '/' + UploadOrEditTemplate;
         method = 'PUT'
         $.ajax({
@@ -137,7 +137,7 @@ $(document).ready(function () {
         var ch = $(this).prop('checked');
 
         $.ajax({
-            url: '/api/dPage/' + X,
+            url:rootPath + '/api/dPage/' + X,
             method: 'PUT',
             data: { active: ch }
         }).done(function (data) {
@@ -155,7 +155,7 @@ $(document).ready(function () {
         UPDATE = $(this).val();
         HoldOn.open(HoldOptions);
         $.ajax({
-            url: "/api/dPage/" + UPDATE,
+            url:rootPath + "/api/dPage/" + UPDATE,
         }).done(function (data) {
             HoldOn.close();
             if (data.success == true) {
@@ -178,7 +178,7 @@ $(document).ready(function () {
         alertify.confirm(lx_i18n.txt_fonfirm_delete, lx_i18n.txt_fonfirm_delete_question, function () {
             HoldOn.open(HoldOptions);
             $.ajax({
-                url: "/api/dPage/" + DELETE,
+                url:rootPath + "/api/dPage/" + DELETE,
                 method: "DELETE"
             }).done(function (data) {
                 HoldOn.close();
@@ -200,7 +200,7 @@ $(document).ready(function () {
         DT.clear().draw();
         HoldOn.open(HoldOptions);
         $.ajax({
-            url: "/api/dPage",
+            url:rootPath + "/api/dPage",
         }).done(function (data) {
 
             HoldOn.close();
@@ -224,7 +224,7 @@ $(document).ready(function () {
                 f_name: $('#txt_f_name').val(),
 
             }
-            var url = "/api/dPage";
+            var url =rootPath + "/api/dPage";
             var method = 'POST';
             if (UPDATE !== '') {
                 url = url + '/' + UPDATE;

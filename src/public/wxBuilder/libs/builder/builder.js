@@ -1220,7 +1220,7 @@ Vvveb.Builder = {
 
 		$.ajax({
 			type: "PUT",
-			url: '/api/dPage/' + lx_ID,//set your server side save script url
+			url: rootPath + '/api/dPage/' + lx_ID,//set your server side save script url
 			data: { html: data.html },
 			cache: false,
 			success: function (data) {

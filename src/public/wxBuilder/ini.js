@@ -25,7 +25,7 @@ $(document).ready(function () {
         //run code after page/iframe is loaded
 
         $.ajax({
-            url: "/api/dPage/" + lx_ID,
+            url: rootPath + "/api/dPage/" + lx_ID,
         }).done(function (data) {
 
             if (data.success == true) {

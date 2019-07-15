@@ -19,7 +19,7 @@ html(lang='en')
                         .panel-heading
                             h3.panel-title  ControlPanel 
                         .panel-body
-                            form(role='form' action="/auth/admin" method="POST")
+                            form(role='form' action=rootPath+"/auth/admin" method="POST")
                                 fieldset
                                     .form-group
                                         input.form-control(id="getUser_", placeholder='User', name='user', type='text', autofocus='')

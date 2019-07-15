@@ -27,6 +27,7 @@ router.get('/', CheckSession, async (req, res) => {
     GetPages(function (pages) {
         res.render("front/home",
             {
+                rootPath: env.root,
                 data: { pages },
                 config: {
                     theme: env.site_theme.toLowerCase(),
@@ -59,6 +60,7 @@ router.get('/blog', CheckSession, async (req, res) => {
     GetPages(function (pages) {
         res.render("front/blog",
             {
+                rootPath: env.root,
                 data: { pages },
                 config: {
                     theme: env.site_theme.toLowerCase(),
@@ -102,6 +104,7 @@ router.get('/page/:name', CheckSession, async (req, res) => {
             }
             res.render("front/d_page",
                 {
+                    rootPath: env.root,
                     data: {
                         pages,
                         html: cFunctions.extractBodyContent(page.html)
@@ -146,6 +149,7 @@ router.get('/article/:name', CheckSession, async (req, res) => {
             }
             res.render("front/article",
                 {
+                    rootPath: env.root,
                     data: {
                         pages,
                         html: page.html
@@ -180,6 +184,7 @@ router.get('/chat', CheckSession, async (req, res) => {
     GetPages(function (pages) {
         res.render("front/chat",
             {
+                rootPath: env.root,
                 data: { pages },
                 config: {
                     theme: env.site_theme.toLowerCase(),

@@ -18,6 +18,7 @@ module.exports = {
     admin_menu_logout: 'Logout',
     admin_menu_articles: 'Blog Articles',
     admin_menu_dinamic_pages: 'Dinamic Pages',
+    admin_menu_events: 'Events',
 
 
     //dashboard

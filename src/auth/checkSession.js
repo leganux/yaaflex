@@ -64,7 +64,7 @@ async function loggedIn(req, res, next) {
     myMethod = myMethod.toUpperCase()
 
 
-    if (reqURL == '/' || req == '/lx_admin' || req == '/logout') {
+    if (reqURL == env.root + '/' || req == env.root + '/lx_admin' || req == env.root + '/logout') {
 
         next();
         return true;
@@ -113,23 +113,23 @@ async function loggedIn(req, res, next) {
 
                     if (metodsLS.includes(myMethod)) {
 
-                        if (item.path.includes(':') && (myMethod == 'GET' || myMethod == 'PUT' || myMethod == 'DELETE')) {
+                        if (env.root + item.path.includes(':') && (myMethod == 'GET' || myMethod == 'PUT' || myMethod == 'DELETE')) {
 
-                            if (reqURL.toLowerCase().trim().includes(item.path.split(':')[0].toLowerCase().trim())) {
+                            if (reqURL.toLowerCase().trim().includes(env.root + item.path.split(':')[0].toLowerCase().trim())) {
 
                                 next();
                                 return 1;
                             }
                         } else if (reqURL.includes('?') && myMethod == 'GET') {
 
-                            if (reqURL.split('?')[0].toLowerCase().trim() == item.path.toLowerCase().trim()) {
+                            if (reqURL.split('?')[0].toLowerCase().trim() == env.root + item.path.toLowerCase().trim()) {
 
                                 next();
                                 return 1;
                             }
                         } else {
 
-                            if (item.path.toLowerCase().trim() == reqURL.toLowerCase().trim()) {
+                            if (env.root + item.path.toLowerCase().trim() == reqURL.toLowerCase().trim()) {
 
                                 next();
                                 return 1;
@@ -143,7 +143,7 @@ async function loggedIn(req, res, next) {
         }
 
 
-       
+
         return backToHome(req, res, next);
 
     }).catch(err => {
